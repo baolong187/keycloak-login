@@ -9,6 +9,7 @@
     font-family: 'IBM Plex Sans';
     font-size: 14px;
 }
+
 #kc-logo-wrapper {
     background-image: url("../images/kc_logo.png");
     background-repeat: no-repeat;
@@ -24,6 +25,7 @@ div.kc-logo-text {
     width: 300px;
     margin: 0 auto;
 }
+
 .kc-head-input {
     display: flex;
     justify-content: space-between;
@@ -59,7 +61,8 @@ div.kc-logo-text {
     width: 100%;
 }
 
-.checkbox label, .radio label {
+.checkbox label,
+.radio label {
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 400;
@@ -68,9 +71,11 @@ div.kc-logo-text {
     color: #666666;
     cursor: pointer;
 }
-.checkbox label{
+
+.checkbox label {
     padding-left: 28px;
 }
+
 /* The container */
 .rememberMeContainer {
     display: block;
@@ -83,19 +88,19 @@ div.kc-logo-text {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .rememberMeContainer input {
+}
+
+/* Hide the browser's default checkbox */
+.rememberMeContainer input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
+}
+
+/* Create a custom checkbox */
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -103,32 +108,32 @@ div.kc-logo-text {
     width: 18px;
     border: 1px solid #ddd;
     background-color: #fff;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .rememberMeContainer:hover input ~ .checkmark {
+}
+
+/* On mouse-over, add a grey background color */
+.rememberMeContainer:hover input~.checkmark {
     background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .rememberMeContainer input:checked ~ .checkmark {
+}
+
+/* When the checkbox is checked, add a blue background */
+.rememberMeContainer input:checked~.checkmark {
     background-color: #2196F3;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .rememberMeContainer input:checked ~ .checkmark:after {
+}
+
+/* Show the checkmark when checked */
+.rememberMeContainer input:checked~.checkmark:after {
     display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .rememberMeContainer .checkmark:after {
+}
+
+/* Style the checkmark/indicator */
+.rememberMeContainer .checkmark:after {
     left: 6px;
     top: 2px;
     width: 5px;
@@ -138,9 +143,9 @@ div.kc-logo-text {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
 
-  .kc-label-providers {
+.kc-label-providers {
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 400;
@@ -175,7 +180,13 @@ div.kc-logo-text {
     color: #747474;
     display: block;
     cursor: pointer;
+    background: #fff;
 }
+
+#kc-social-providers ul li a:hover {
+    background: #fff;
+}
+
 
 #kc-social-providers #microsoft .kc-icon-providers {
     background: url(./images/kc_microsoft.png);
@@ -205,7 +216,7 @@ div.kc-logo-text {
 }
 
 
-#kc-form-buttons .kc-button {
+.kc-button {
     background: #00419F;
     color: #fff;
     border: none;
@@ -217,3 +228,48 @@ div.kc-logo-text {
     line-height: 23px;
 }
 
+#kc-page-title {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    color: #00419F;
+    margin-top: 8px;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.kc-button-login-next {
+    position: relative;
+    padding-right: 45px;
+}
+
+.kc-button-login-next::after {
+    background: url("../images/kc_vector.png") no-repeat;
+    content: "";
+    position: absolute;
+    display: block;
+    background-size: contain;
+    width: 17px;
+    height: 14px;
+    right: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.kc-container-back {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.kc-button-login-back{
+    background: url("../images/kc_login_back.png") no-repeat;
+    border: none;
+    width: 20px;
+    height: 17px;
+    background-size: contain;
+    margin-right: 9px;
+}
