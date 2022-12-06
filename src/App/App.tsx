@@ -8,7 +8,7 @@ export default function App() {
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <img src={myimg} alt="test_image" />
-                <p style={{ "fontFamily": '"Work Sans"' }}>Hello world</p>
+                <p style={{ "fontFamily": '"IBM Plex Sans"' }}>Hello world</p>
             </header>
         </div>
     );

@@ -16,10 +16,10 @@
   -->
   <title>React App</title>
 
-  <link rel="preload" href="%PUBLIC_URL%/fonts/WorkSans/worksans-bold-webfont.woff2" as="font" crossorigin="anonymous">
-  <link rel="preload" href="%PUBLIC_URL%/fonts/WorkSans/worksans-medium-webfont.woff2" as="font" crossorigin="anonymous">
-  <link rel="preload" href="%PUBLIC_URL%/fonts/WorkSans/worksans-regular-webfont.woff2" as="font" crossorigin="anonymous">
-  <link rel="preload" href="%PUBLIC_URL%/fonts/WorkSans/worksans-semibold-webfont.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="%PUBLIC_URL%/fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf" as="font" crossorigin="anonymous">
+  <link rel="preload" href="%PUBLIC_URL%/fonts/Barlow/Barlow-Regular.ttf" as="font" crossorigin="anonymous">
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/loginPage.css">
+
   <!-- 
   	We need to put it plain in the html because of Keycloakify, in case we decide to remove --external-assets 
   	SEE: https://github.com/InseeFrLab/keycloakify#font-face-importing-fonts-from-thesrc-dir 
@@ -27,40 +27,19 @@
   <style>
     /* latin */
     @font-face {
-    	font-family: 'Work Sans';
-    	font-style: normal;
-    	font-weight: normal;
-    	/*400*/
-    	font-display: swap;
-    	src: url("%PUBLIC_URL%/fonts/WorkSans/worksans-regular-webfont.woff2") format("woff2");
+      font-family: 'IBM Plex Sans';
+      font-style: normal;
+      font-weight: normal;
+      font-display: swap;
+      src: url("%PUBLIC_URL%/fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf");
     }
-  
+
     /* latin */
     @font-face {
-    	font-family: 'Work Sans';
-    	font-style: normal;
-    	font-weight: 500;
-    	font-display: swap;
-    	src: url("%PUBLIC_URL%/fonts/WorkSans/worksans-medium-webfont.woff2") format("woff2");
-    }
-  
-    /* latin */
-    @font-face {
-    	font-family: 'Work Sans';
-    	font-style: normal;
-    	font-weight: 600;
-    	font-display: swap;
-    	src: url("%PUBLIC_URL%/fonts/WorkSans/worksans-semibold-webfont.woff2") format("woff2");
-    }
-  
-    /* latin */
-    @font-face {
-    	font-family: 'Work Sans';
-    	font-style: normal;
-    	font-weight: bold;
-    	/*700*/
-    	font-display: swap;
-    	src: url("%PUBLIC_URL%/fonts/WorkSans/worksans-bold-webfont.woff2") format("woff2");
+      font-family: 'Barlow';
+      font-style: normal;
+      font-display: swap;
+      src: url("%PUBLIC_URL%/fonts/Barlow/Barlow-Regular.ttf");
     }
   </style>
 

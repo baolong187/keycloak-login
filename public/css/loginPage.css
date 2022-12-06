@@ -1,0 +1,219 @@
+.login-pf {
+    background: #030303 url("../images/kc_background.png") repeat-x 50% 0;
+}
+
+.login-pf body {
+    background: url("../images/kc_background.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    font-family: 'IBM Plex Sans';
+    font-size: 14px;
+}
+#kc-logo-wrapper {
+    background-image: url("../images/kc_logo.png");
+    background-repeat: no-repeat;
+    height: 63px;
+    width: 300px;
+    margin: 62px auto 0;
+}
+
+div.kc-logo-text {
+    background-image: url("../images/kc_logo.png");
+    background-repeat: no-repeat;
+    height: 63px;
+    width: 300px;
+    margin: 0 auto;
+}
+.kc-head-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kc-label-input {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    /* identical to box height */
+    color: #747474;
+    display: block;
+}
+
+
+.kc-forgot-password {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    text-decoration: none;
+    color: #00419F;
+}
+
+.kc-form-input {
+    background: #E8F0FE;
+    border: 1px solid white;
+    font-size: 14px;
+    height: 42px;
+    width: 100%;
+}
+
+.checkbox label, .radio label {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #666666;
+    cursor: pointer;
+}
+.checkbox label{
+    padding-left: 28px;
+}
+/* The container */
+.rememberMeContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .rememberMeContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .rememberMeContainer:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .rememberMeContainer input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .rememberMeContainer input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .rememberMeContainer .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .kc-label-providers {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    /* identical to box height */
+    color: #00419F;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#kc-social-providers ul {
+    list-style: none;
+}
+
+#kc-social-providers ul li {
+    border: 1px solid #DFDFDF;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 0px 5px;
+}
+
+#kc-social-providers ul li a {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    /* identical to box height */
+    padding: 7px 0;
+    color: #747474;
+    display: block;
+    cursor: pointer;
+}
+
+#kc-social-providers #microsoft .kc-icon-providers {
+    background: url(./images/kc_microsoft.png);
+    width: 30px;
+    height: 19px;
+    display: inline-block;
+    margin-left: 4px;
+    background-repeat: no-repeat;
+}
+
+#kc-social-providers #google .kc-icon-providers {
+    background: url(./images/kc_google.png);
+    width: 30px;
+    height: 19px;
+    display: inline-block;
+    margin-left: 4px;
+    background-repeat: no-repeat;
+}
+
+#kc-social-providers #facebook .kc-icon-providers {
+    background: url(./images/kc_facebook.png);
+    width: 30px;
+    height: 19px;
+    display: inline-block;
+    margin-left: 4px;
+    background-repeat: no-repeat;
+}
+
+
+#kc-form-buttons .kc-button {
+    background: #00419F;
+    color: #fff;
+    border: none;
+    padding: 5px 18px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+
