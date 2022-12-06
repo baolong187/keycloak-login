@@ -101,77 +101,78 @@ const Login = memo((props: LoginProps) => {
                         {realm.password && (
                             <form id="kc-form-login" onSubmit={onSubmit} action={url.loginAction} method="post">
 
-                                {[0].includes(activeStep) && (
-                                    <div className={clsx(kcProps.kcFormGroupClass)}>
-                                        {(() => {
-                                            const label = !realm.loginWithEmailAllowed
-                                                ? "username"
-                                                : realm.registrationEmailAsUsername
-                                                    ? "email"
-                                                    : "usernameOrEmail";
-                                            const autoCompleteHelper: typeof label = label === "usernameOrEmail" ? "username" : label;
 
-                                            return (
-                                                <>
-                                                    <div className="kc-head-input">
-                                                        <label htmlFor={autoCompleteHelper} className={`${clsx(kcProps.kcLabelClass)} kc-label-input`}> Email </label>
-                                                        <div className={`${clsx(kcProps.kcFormOptionsWrapperClass)} kc-label-forgot-password`}>
-                                                            {realm.resetPasswordAllowed && (
-                                                                <span>
-                                                                    <a tabIndex={5} className="kc-forgot-password" href={url.loginResetCredentialsUrl}>Quên mật khẩu</a>
-                                                                </span>
-                                                            )}
-                                                        </div>
+                                <div className={`${clsx(kcProps.kcFormGroupClass)} ${[0].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
+                                    {(() => {
+                                        const label = !realm.loginWithEmailAllowed
+                                            ? "username"
+                                            : realm.registrationEmailAsUsername
+                                                ? "email"
+                                                : "usernameOrEmail";
+                                        const autoCompleteHelper: typeof label = label === "usernameOrEmail" ? "username" : label;
+
+                                        return (
+                                            <>
+                                                <div className="kc-head-input">
+                                                    <label htmlFor={autoCompleteHelper} className={`${clsx(kcProps.kcLabelClass)} kc-label-input`}> Email </label>
+                                                    <div className={`${clsx(kcProps.kcFormOptionsWrapperClass)} kc-label-forgot-password`}>
+                                                        {realm.resetPasswordAllowed && (
+                                                            <span>
+                                                                <a tabIndex={5} className="kc-forgot-password" href={url.loginResetCredentialsUrl}>Quên mật khẩu</a>
+                                                            </span>
+                                                        )}
                                                     </div>
-                                                    <input
-                                                        tabIndex={1}
-                                                        id={autoCompleteHelper}
-                                                        className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
-                                                        name={autoCompleteHelper}
-                                                        // defaultValue={login.username ?? ""}
-                                                        type="text"
-                                                        onChange={onChangeInputUsername}
-                                                        value={username || ""}
-                                                        {...(usernameEditDisabled
-                                                            ? { "disabled": true }
-                                                            : {
-                                                                "autoFocus": true,
-                                                                "autoComplete": "off"
-                                                            })}
-                                                    />
-                                                </>
-                                            );
-                                        })()}
-                                    </div>
-                                )}
+                                                </div>
+                                                <input
+                                                    tabIndex={1}
+                                                    id={autoCompleteHelper}
+                                                    className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
+                                                    name={autoCompleteHelper}
+                                                    // defaultValue={login.username ?? ""}
+                                                    defaultValue={username || ""}
+                                                    type="text"
+                                                    onChange={onChangeInputUsername}
+                                                    // value={username || ""}
+                                                    {...(usernameEditDisabled
+                                                        ? { "disabled": true }
+                                                        : {
+                                                            "autoFocus": true,
+                                                            "autoComplete": "off"
+                                                        })}
+                                                />
+                                            </>
+                                        );
+                                    })()}
+                                </div>
 
-                                {[1].includes(activeStep) && (
-                                    <div className={clsx(kcProps.kcFormGroupClass)}>
-                                        <div className="kc-container-back">
-                                            <button type="button" className="kc-button-login-back" onClick={handleBack} />
-                                            <span> {username} </span>
-                                        </div>
 
-                                        <div className="kc-head-input">
-                                            <label htmlFor="password" className={`${clsx(kcProps.kcLabelClass)} kc-label-input`}>Mật khẩu</label>
-                                            <div className={`${clsx(kcProps.kcFormOptionsWrapperClass)} kc-label-forgot-password`}>
-                                                {realm.resetPasswordAllowed && (
-                                                    <span>
-                                                        <a tabIndex={5} className="kc-forgot-password" href={url.loginResetCredentialsUrl}>Quên mật khẩu</a>
-                                                    </span>
-                                                )}
-                                            </div>
-                                        </div>
-                                        <input
-                                            tabIndex={2}
-                                            id="password"
-                                            className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
-                                            name="password"
-                                            type="password"
-                                            autoComplete="off"
-                                        />
+
+                                <div className={`${clsx(kcProps.kcFormGroupClass)} ${[1].includes(activeStep) ? "kc-active" : "kc-hide"}` }>
+                                    <div className="kc-container-back">
+                                        <button type="button" className="kc-button-login-back" onClick={handleBack} />
+                                        <span> {username} </span>
                                     </div>
-                                )}
+
+                                    <div className="kc-head-input">
+                                        <label htmlFor="password" className={`${clsx(kcProps.kcLabelClass)} kc-label-input`}>Mật khẩu</label>
+                                        <div className={`${clsx(kcProps.kcFormOptionsWrapperClass)} kc-label-forgot-password`}>
+                                            {realm.resetPasswordAllowed && (
+                                                <span>
+                                                    <a tabIndex={5} className="kc-forgot-password" href={url.loginResetCredentialsUrl}>Quên mật khẩu</a>
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <input
+                                        tabIndex={2}
+                                        id="password"
+                                        className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
+                                        name="password"
+                                        type="password"
+                                        autoComplete="off"
+                                    />
+                                </div>
+
 
                                 <div className={clsx(kcProps.kcFormGroupClass, kcProps.kcFormSettingClass)}>
                                     <div id="kc-form-options">

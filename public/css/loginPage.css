@@ -276,3 +276,10 @@ div.kc-logo-text {
 .alert-message{
     font-size: 14px !important
 }
+.kc-hide{
+    display: none;
+}
+
+.kc-active{
+    display: block;
+}
