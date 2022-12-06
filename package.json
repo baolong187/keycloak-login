@@ -27,6 +27,7 @@
         "@emotion/styled": "^11.10.5",
         "@mui/icons-material": "^5.10.16",
         "@mui/material": "^5.10.16",
+        "axios": "^1.2.1",
         "evt": "^2.4.1",
         "keycloakify": "^6.8.4",
         "minimist": "^1.2.7",

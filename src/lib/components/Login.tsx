@@ -25,7 +25,7 @@ const Login = memo((props: LoginProps) => {
 
     const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
     const [activeStep, setActiveStep] = React.useState(0);
-    const [username, setUsername] = React.useState("");
+    const [username, setUsername] = React.useState(login.username || "");
     const [message, setMsg] = React.useState("");
     const [msgType, setMsgType] = React.useState("info");
     const [openNotiy, setOpenNotiy] = React.useState(false);
@@ -128,7 +128,7 @@ const Login = memo((props: LoginProps) => {
                                                         id={autoCompleteHelper}
                                                         className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
                                                         name={autoCompleteHelper}
-                                                        defaultValue={login.username ?? ""}
+                                                        // defaultValue={login.username ?? ""}
                                                         type="text"
                                                         onChange={onChangeInputUsername}
                                                         value={username || ""}
