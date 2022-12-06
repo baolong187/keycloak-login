@@ -273,3 +273,6 @@ div.kc-logo-text {
     background-size: contain;
     margin-right: 9px;
 }
+.alert-message{
+    font-size: 14px !important
+}

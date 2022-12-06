@@ -7,6 +7,7 @@ import { clsx } from "../tools/clsx";
 import { useConstCallback } from "powerhooks/useConstCallback";
 import type { FormEventHandler } from "react";
 import type { I18n } from "../i18n";
+import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
 
@@ -27,6 +28,7 @@ const Login = memo((props: LoginProps) => {
     const [username, setUsername] = React.useState("");
     const [message, setMsg] = React.useState("");
     const [msgType, setMsgType] = React.useState("info");
+    const [openNotiy, setOpenNotiy] = React.useState(false);
 
     const onSubmit = useConstCallback<FormEventHandler<HTMLFormElement>>(e => {
         e.preventDefault();
@@ -54,6 +56,7 @@ const Login = memo((props: LoginProps) => {
 
     const handleNext = () => {
         if (!username) {
+            openNoti("Vui lòng nhập tài khoản hoặc email", "warning")
             return
         }
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -63,7 +66,14 @@ const Login = memo((props: LoginProps) => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
-
+    const openNoti = (message: string, type: string = "info") => {
+        setMsg(message)
+        setMsgType(type)
+        setOpenNotiy(!openNotiy)
+    }
+    const handleClose = () => {
+        setOpenNotiy(false)
+    };
 
     return (
         <Template
@@ -73,7 +83,15 @@ const Login = memo((props: LoginProps) => {
             headerNode={"Đăng nhập vào C.OPE2N"}
             formNode={
                 <div id="kc-form" className={clsx(realm.password && social.providers !== undefined && kcProps.kcContentWrapperClass)}>
-                    
+                    <Snackbar
+                        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+                        open={openNotiy}
+                        onClose={handleClose}
+                        autoHideDuration={3000}
+                        key={"top" + "center"}
+                    >
+                        <Alert className="alert-message" severity={msgType as any} sx={{ width: '100%' }}>{message}</Alert>
+                    </Snackbar>
                     <div
                         id="kc-form-wrapper"
                         className={clsx(
@@ -91,7 +109,6 @@ const Login = memo((props: LoginProps) => {
                                                 : realm.registrationEmailAsUsername
                                                     ? "email"
                                                     : "usernameOrEmail";
-
                                             const autoCompleteHelper: typeof label = label === "usernameOrEmail" ? "username" : label;
 
                                             return (

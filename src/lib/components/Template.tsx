@@ -9,7 +9,6 @@ import { useConstCallback } from "powerhooks/useConstCallback";
 import type { KcTemplateProps } from "./KcProps";
 import { clsx } from "../tools/clsx";
 import type { I18n } from "../i18n";
-import Messager from "./Messager"
 
 export type TemplateProps = {
     displayInfo?: boolean;
