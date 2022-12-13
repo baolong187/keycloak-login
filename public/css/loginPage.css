@@ -189,7 +189,7 @@ div.kc-logo-text {
 
 
 #kc-social-providers #microsoft .kc-icon-providers {
-    background: url(./images/kc_microsoft.png);
+    background: url("../images/kc_microsoft.png");
     width: 30px;
     height: 19px;
     display: inline-block;
@@ -198,7 +198,7 @@ div.kc-logo-text {
 }
 
 #kc-social-providers #google .kc-icon-providers {
-    background: url(./images/kc_google.png);
+    background: url("../images/kc_google.png");
     width: 30px;
     height: 19px;
     display: inline-block;
@@ -207,7 +207,7 @@ div.kc-logo-text {
 }
 
 #kc-social-providers #facebook .kc-icon-providers {
-    background: url(./images/kc_facebook.png);
+    background: url("../images/kc_facebook.png");
     width: 30px;
     height: 19px;
     display: inline-block;
@@ -220,7 +220,7 @@ div.kc-logo-text {
     background: #00419F;
     color: #fff;
     border: none;
-    padding: 5px 18px;
+    padding: 7px 18px;
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 500;
@@ -246,6 +246,10 @@ div.kc-logo-text {
     padding-right: 45px;
 }
 
+#kc-form-buttons {
+    margin-top: 28px;
+}
+
 .kc-button-login-next::after {
     background: url("../images/kc_vector.png") no-repeat;
     content: "";
@@ -265,7 +269,8 @@ div.kc-logo-text {
     font-size: 16px;
     margin-bottom: 20px;
 }
-.kc-button-login-back{
+
+.kc-button-login-back {
     background: url("../images/kc_login_back.png") no-repeat;
     border: none;
     width: 20px;
@@ -273,13 +278,47 @@ div.kc-logo-text {
     background-size: contain;
     margin-right: 9px;
 }
-.alert-message{
+
+.alert-message {
     font-size: 14px !important
 }
-.kc-hide{
+
+.kc-hide {
     display: none;
 }
 
-.kc-active{
+.kc-active {
     display: block;
+}
+
+.login-pf-page .login-pf-social-section {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+}
+
+#kc-form-wrapper {
+    border: none;
+    margin-bottom: 30px;
+    padding: 0 41px 30px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.login-pf-page .login-pf-social-section:last-of-type {
+    border: none;
+    padding: 0 40px;
+}
+
+
+.login-pf-page .card-pf {
+    max-width: 525px;
+    padding: 0 0 10px;
+}
+
+.login-pf-header {
+    padding: 20px 40px 10px 40px;
+}
+
+.login-pf-page .kc-container-alert {
+    padding: 0 40px;
 }

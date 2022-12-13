@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { StrictMode, lazy, Suspense } from "react";
 import { kcContext } from "./KcApp/kcContext";
+import 'antd/dist/antd.css';
 
 const App = lazy(() => import("./App"));
 const KcApp = lazy(() => import("./KcApp"));

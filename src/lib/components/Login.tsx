@@ -7,8 +7,7 @@ import { clsx } from "../tools/clsx";
 import { useConstCallback } from "powerhooks/useConstCallback";
 import type { FormEventHandler } from "react";
 import type { I18n } from "../i18n";
-import Snackbar from "@mui/material/Snackbar";
-import Alert from "@mui/material/Alert";
+import { message } from "antd";
 
 
 export type LoginProps = KcProps & {
@@ -26,16 +25,13 @@ const Login = memo((props: LoginProps) => {
     const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
     const [activeStep, setActiveStep] = React.useState(0);
     const [username, setUsername] = React.useState(login.username || "");
-    const [message, setMsg] = React.useState("");
-    const [msgType, setMsgType] = React.useState("info");
-    const [openNotiy, setOpenNotiy] = React.useState(false);
+
 
     const onSubmit = useConstCallback<FormEventHandler<HTMLFormElement>>(e => {
         e.preventDefault();
         setIsLoginButtonDisabled(true);
         const formElement = e.target as HTMLFormElement;
-        //NOTE: Even if we login with email Keycloak expect username and password in
-        //the POST request.
+
         formElement.querySelector("input[name='email']")?.setAttribute("name", "username");
 
         formElement.submit();
@@ -56,7 +52,7 @@ const Login = memo((props: LoginProps) => {
 
     const handleNext = () => {
         if (!username) {
-            openNoti("Vui lòng nhập tài khoản hoặc email", "warning")
+            message.error("Vui lòng nhập tài khoản hoặc email", 3)
             return
         }
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -66,14 +62,6 @@ const Login = memo((props: LoginProps) => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
-    const openNoti = (message: string, type: string = "info") => {
-        setMsg(message)
-        setMsgType(type)
-        setOpenNotiy(!openNotiy)
-    }
-    const handleClose = () => {
-        setOpenNotiy(false)
-    };
 
     return (
         <Template
@@ -83,15 +71,6 @@ const Login = memo((props: LoginProps) => {
             headerNode={"Đăng nhập vào C.OPE2N"}
             formNode={
                 <div id="kc-form" className={clsx(realm.password && social.providers !== undefined && kcProps.kcContentWrapperClass)}>
-                    <Snackbar
-                        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-                        open={openNotiy}
-                        onClose={handleClose}
-                        autoHideDuration={3000}
-                        key={"top" + "center"}
-                    >
-                        <Alert className="alert-message" severity={msgType as any} sx={{ width: '100%' }}>{message}</Alert>
-                    </Snackbar>
                     <div
                         id="kc-form-wrapper"
                         className={clsx(
@@ -147,7 +126,7 @@ const Login = memo((props: LoginProps) => {
 
 
 
-                                <div className={`${clsx(kcProps.kcFormGroupClass)} ${[1].includes(activeStep) ? "kc-active" : "kc-hide"}` }>
+                                <div className={`${clsx(kcProps.kcFormGroupClass)} ${[1].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
                                     <div className="kc-container-back">
                                         <button type="button" className="kc-button-login-back" onClick={handleBack} />
                                         <span> {username} </span>
@@ -245,6 +224,22 @@ const Login = memo((props: LoginProps) => {
                             </ul>
                         </div>
                     )}
+                    <div id="kc-social-providers" className="col-xs-12 col-sm-6 login-pf-social-section">
+                        <ul className="login-pf-social list-unstyled login-pf-social-all">
+                            <li id="facebook" className="login-pf-social-link"><a
+                                href="/auth/realms/master/broker/facebook/login?client_id=security-admin-console&amp;tab_id=Jq6wbPGNDCc&amp;session_code=nDoE1M1eer1fD6zwfPbmqnP6iG95sGAJlwlS4wLXuU8"
+                                id="social-facebook" className="kc-social-item"><span>Facebook</span><i className="kc-icon-providers"></i></a>
+                            </li>
+                            <li id="google" className="login-pf-social-link"><a
+                                href="/auth/realms/master/broker/google/login?client_id=security-admin-console&amp;tab_id=Jq6wbPGNDCc&amp;session_code=nDoE1M1eer1fD6zwfPbmqnP6iG95sGAJlwlS4wLXuU8"
+                                id="social-google" className="kc-social-item"><span>Google</span><i className="kc-icon-providers"></i></a></li>
+                            <li id="microsoft" className="login-pf-social-link"><a
+                                href="/auth/realms/master/broker/microsoft/login?client_id=security-admin-console&amp;tab_id=Jq6wbPGNDCc&amp;session_code=nDoE1M1eer1fD6zwfPbmqnP6iG95sGAJlwlS4wLXuU8"
+                                id="social-microsoft" className="kc-social-item"><span>Microsoft</span><i className="kc-icon-providers"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             }
             infoNode={

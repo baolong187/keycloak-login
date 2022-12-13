@@ -203,20 +203,22 @@ const Template = memo((props: TemplateProps) => {
                 <div id="kc-content">
                     <div id="kc-content-wrapper">
                         {/* App-initiated actions should not see warning messages about the need to complete the action during login. */}
-                        {displayMessage && message !== undefined && (message.type !== "warning" || !isAppInitiatedAction) && (
-                            <div className={clsx("alert", `alert-${message.type}`)}>
-                                {message.type === "success" && <span className={clsx(props.kcFeedbackSuccessIcon)}></span>}
-                                {message.type === "warning" && <span className={clsx(props.kcFeedbackWarningIcon)}></span>}
-                                {message.type === "error" && <span className={clsx(props.kcFeedbackErrorIcon)}></span>}
-                                {message.type === "info" && <span className={clsx(props.kcFeedbackInfoIcon)}></span>}
-                                <span
-                                    className="kc-feedback-text"
-                                    dangerouslySetInnerHTML={{
-                                        "__html": message.summary
-                                    }}
-                                />
-                            </div>
-                        )}
+                        <div className="kc-container-alert">
+                            {displayMessage && message !== undefined && (message.type !== "warning" || !isAppInitiatedAction) && (
+                                <div className={clsx("alert", `alert-${message.type}`)}>
+                                    {message.type === "success" && <span className={clsx(props.kcFeedbackSuccessIcon)}></span>}
+                                    {message.type === "warning" && <span className={clsx(props.kcFeedbackWarningIcon)}></span>}
+                                    {message.type === "error" && <span className={clsx(props.kcFeedbackErrorIcon)}></span>}
+                                    {message.type === "info" && <span className={clsx(props.kcFeedbackInfoIcon)}></span>}
+                                    <span
+                                        className="kc-feedback-text"
+                                        dangerouslySetInnerHTML={{
+                                            "__html": message.summary
+                                        }}
+                                    />
+                                </div>
+                            )}
+                        </div>
                         {formNode}
                         {auth !== undefined && auth.showTryAnotherWayLink && showAnotherWayIfPresent && (
                             <form
