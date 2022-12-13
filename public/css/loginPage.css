@@ -300,10 +300,11 @@ div.kc-logo-text {
 #kc-form-wrapper {
     border: none;
     margin-bottom: 30px;
+    padding: 0;
 }
 
 #kc-social-providers{
-    border-top: 1px solid #dfdfdf;
+    padding: 0;
 }
 
 
