@@ -250,6 +250,9 @@ div.kc-logo-text {
     padding-right: 45px;
 }
 
+#kc-form-buttons {
+    margin-top: 28px;
+}
 
 .kc-button-login-next::after {
     background: url("../images/kc_vector.png") no-repeat;
@@ -292,7 +295,31 @@ div.kc-logo-text {
     display: block;
 }
 
+.login-pf-page .login-pf-social-section {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+}
 
+#kc-form-wrapper {
+    border: none;
+    margin-bottom: 38px;
+    padding: 0;
+}
+
+#kc-social-providers {
+    padding: 0;
+}
+
+
+.login-pf-page .login-pf-social-section:last-of-type {
+    border: none;
+}
+
+
+.login-pf-page .card-pf {
+    max-width: 525px;
+}
 
 .kc-solid-form {
     height: 1px;
