@@ -299,7 +299,7 @@ div.kc-logo-text {
 
 #kc-form-wrapper {
     border: none;
-    padding: 0 41px 30px;
+    margin-bottom: 30px;
 }
 
 #kc-social-providers{
@@ -309,22 +309,14 @@ div.kc-logo-text {
 
 .login-pf-page .login-pf-social-section:last-of-type {
     border: none;
-    padding: 0 40px;
 }
 
 
 .login-pf-page .card-pf {
     max-width: 525px;
-    padding: 0 0 1px;
 }
 
-.login-pf-header {
-    padding: 20px 40px 10px 40px;
-}
-
-.login-pf-page .kc-container-alert {
-    padding: 0 40px;
-}
+.kc-solid-form {height: 1px;background: #dfdfdf;margin-left: -40px;margin-right: -40px;}
 
 .kc-label-providers {
     font-family: 'IBM Plex Sans';

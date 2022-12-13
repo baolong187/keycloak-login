@@ -205,25 +205,29 @@ const Login = memo((props: LoginProps) => {
                             </form>
                         )}
                     </div>
+
                     {realm.password && social.providers !== undefined && (
-                        <div id="kc-social-providers" className={clsx(kcProps.kcFormSocialAccountContentClass, kcProps.kcFormSocialAccountClass)}>
-                            <div className="kc-label-providers"> Hoặc bạn có thể đăng nhập qua </div>
-                            <ul
-                                className={clsx(
-                                    kcProps.kcFormSocialAccountListClass,
-                                    social.providers.length > 4 && kcProps.kcFormSocialAccountDoubleListClass
-                                )}
-                            >
-                                {social.providers.map(p => (
-                                    <li key={p.providerId} id={p.providerId} className={clsx(kcProps.kcFormSocialAccountListLinkClass)}>
-                                        <a href={p.loginUrl} id={`social-${p.alias}`} className="kc-social-item">
-                                            <span>Đăng nhập băng {p.displayName}</span>
-                                            <i className="kc-icon-providers"></i>
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        <>
+                            <div className="kc-solid-form"> </div>
+                            <div id="kc-social-providers" className={clsx(kcProps.kcFormSocialAccountContentClass, kcProps.kcFormSocialAccountClass)}>
+                                <div className="kc-label-providers"> Hoặc bạn có thể đăng nhập qua </div>
+                                <ul
+                                    className={clsx(
+                                        kcProps.kcFormSocialAccountListClass,
+                                        social.providers.length > 4 && kcProps.kcFormSocialAccountDoubleListClass
+                                    )}
+                                >
+                                    {social.providers.map(p => (
+                                        <li key={p.providerId} id={p.providerId} className={clsx(kcProps.kcFormSocialAccountListLinkClass)}>
+                                            <a href={p.loginUrl} id={`social-${p.alias}`} className="kc-social-item">
+                                                <span>Đăng nhập băng {p.displayName}</span>
+                                                <i className="kc-icon-providers"></i>
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </>
                     )}
                 </div>
             }
