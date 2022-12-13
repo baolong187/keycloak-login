@@ -36,7 +36,7 @@ const Register = memo((props: RegisterProps) => {
                             <input
                                 type="text"
                                 id="firstName"
-                                className={clsx(kcProps.kcInputClass)}
+                                className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
                                 name="firstName"
                                 defaultValue={register.formData.firstName ?? ""}
                             />
@@ -53,7 +53,7 @@ const Register = memo((props: RegisterProps) => {
                             <input
                                 type="text"
                                 id="lastName"
-                                className={clsx(kcProps.kcInputClass)}
+                                className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
                                 name="lastName"
                                 defaultValue={register.formData.lastName ?? ""}
                             />
@@ -70,7 +70,7 @@ const Register = memo((props: RegisterProps) => {
                             <input
                                 type="text"
                                 id="email"
-                                className={clsx(kcProps.kcInputClass)}
+                                className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
                                 name="email"
                                 defaultValue={register.formData.email ?? ""}
                                 autoComplete="email"
@@ -88,7 +88,7 @@ const Register = memo((props: RegisterProps) => {
                                 <input
                                     type="text"
                                     id="username"
-                                    className={clsx(kcProps.kcInputClass)}
+                                    className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
                                     name="username"
                                     defaultValue={register.formData.username ?? ""}
                                     autoComplete="username"
@@ -110,7 +110,7 @@ const Register = memo((props: RegisterProps) => {
                                     <input
                                         type="password"
                                         id="password"
-                                        className={clsx(kcProps.kcInputClass)}
+                                        className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
                                         name="password"
                                         autoComplete="new-password"
                                     />
@@ -129,7 +129,7 @@ const Register = memo((props: RegisterProps) => {
                                     </label>
                                 </div>
                                 <div className={clsx(kcProps.kcInputWrapperClass)}>
-                                    <input type="password" id="password-confirm" className={clsx(kcProps.kcInputClass)} name="password-confirm" />
+                                    <input type="password" id="password-confirm" className={`${clsx(kcProps.kcInputClass)} kc-form-input`} name="password-confirm" />
                                 </div>
                             </div>
                         </>

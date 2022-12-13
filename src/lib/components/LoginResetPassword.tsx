@@ -42,7 +42,7 @@ const LoginResetPassword = memo((props: LoginResetPasswordProps) => {
                                 type="text"
                                 id="username"
                                 name="username"
-                                className={clsx(kcProps.kcInputClass)}
+                                className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
                                 autoFocus
                                 defaultValue={auth !== undefined && auth.showUsername ? auth.attemptedUsername : undefined}
                             />
