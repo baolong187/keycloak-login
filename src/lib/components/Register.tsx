@@ -23,7 +23,7 @@ const Register = memo((props: RegisterProps) => {
     return (
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
-            headerNode={"Tạo tài khoản"}
+            headerNode={"Tạo tài khoản C.OPE2N"}
             formNode={
                 <form id="kc-register-form" className={clsx(kcProps.kcFormClass)} action={url.registrationAction} method="post">
                     <div className={clsx(kcProps.kcFormGroupClass, messagesPerField.printIfExists("firstName", kcProps.kcFormGroupErrorClass))}>
@@ -145,7 +145,7 @@ const Register = memo((props: RegisterProps) => {
                         <div id="kc-form-options" className={clsx(kcProps.kcFormOptionsClass)}>
                             <div className={clsx(kcProps.kcFormOptionsWrapperClass)}>
                                 <span>
-                                    <a href={url.loginUrl}>{"Quay lại đăng nhập"}</a>
+                                    <a href={url.loginUrl}>{"<<Quay lại trang đăng nhập"}</a>
                                 </span>
                             </div>
                         </div>

@@ -228,6 +228,10 @@ div.kc-logo-text {
     line-height: 23px;
 }
 
+.kc-button:hover {
+    background: #1c63c9;
+}
+
 #kc-page-title {
     font-family: 'Barlow';
     font-style: normal;
@@ -303,7 +307,7 @@ div.kc-logo-text {
     padding: 0;
 }
 
-#kc-social-providers{
+#kc-social-providers {
     padding: 0;
 }
 
@@ -315,10 +319,14 @@ div.kc-logo-text {
 
 .login-pf-page .card-pf {
     max-width: 525px;
-    padding: 20px 40px 15px 40px;
 }
 
-.kc-solid-form {height: 1px;background: #dfdfdf;margin-left: -40px;margin-right: -40px;}
+.kc-solid-form {
+    height: 1px;
+    background: #dfdfdf;
+    margin-left: -40px;
+    margin-right: -40px;
+}
 
 .kc-label-providers {
     font-family: 'IBM Plex Sans';
@@ -332,4 +340,6 @@ div.kc-logo-text {
     padding: 28px 0;
 }
 
-#kc-info {margin-top: 20px;}
+#kc-info {
+    margin-top: 20px;
+}
