@@ -178,9 +178,11 @@ div.kc-logo-text {
     /* identical to box height */
     padding: 8px 0;
     color: #747474;
-    display: block;
     cursor: pointer;
     background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #kc-social-providers ul li a:hover {
@@ -193,7 +195,7 @@ div.kc-logo-text {
     width: 30px;
     height: 19px;
     display: inline-block;
-    margin-left: 4px;
+    margin-left: 8px;
     background-repeat: no-repeat;
 }
 
@@ -202,7 +204,7 @@ div.kc-logo-text {
     width: 30px;
     height: 19px;
     display: inline-block;
-    margin-left: 4px;
+    margin-left: 8px;
     background-repeat: no-repeat;
 }
 
@@ -211,7 +213,7 @@ div.kc-logo-text {
     width: 30px;
     height: 19px;
     display: inline-block;
-    margin-left: 4px;
+    margin-left: 8px;
     background-repeat: no-repeat;
 }
 
@@ -228,7 +230,8 @@ div.kc-logo-text {
     line-height: 23px;
 }
 
-.kc-button:hover, #kc-login:hover {
+.kc-button:hover,
+#kc-login:hover {
     background: #00419F;
 }
 
@@ -311,4 +314,10 @@ div.kc-logo-text {
     color: #00419F;
     text-align: center;
     padding: 28px 0;
+}
+
+.login-pf-page .login-pf-signup a {
+    margin-left: 10px;
+    color: #00419F;
+    font-size: 16px;
 }
