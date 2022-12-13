@@ -216,7 +216,7 @@ const Login = memo((props: LoginProps) => {
                                 {social.providers.map(p => (
                                     <li key={p.providerId} id={p.providerId} className={clsx(kcProps.kcFormSocialAccountListLinkClass)}>
                                         <a href={p.loginUrl} id={`social-${p.alias}`} className="kc-social-item">
-                                            <span>{p.displayName}</span>
+                                            <span>Đăng nhập băng {p.displayName}</span>
                                             <i className="kc-icon-providers"></i>
                                         </a>
                                     </li>
@@ -224,22 +224,6 @@ const Login = memo((props: LoginProps) => {
                             </ul>
                         </div>
                     )}
-                    <div id="kc-social-providers" className="col-xs-12 col-sm-6 login-pf-social-section">
-                        <ul className="login-pf-social list-unstyled login-pf-social-all">
-                            <li id="facebook" className="login-pf-social-link"><a
-                                href="/auth/realms/master/broker/facebook/login?client_id=security-admin-console&amp;tab_id=Jq6wbPGNDCc&amp;session_code=nDoE1M1eer1fD6zwfPbmqnP6iG95sGAJlwlS4wLXuU8"
-                                id="social-facebook" className="kc-social-item"><span>Facebook</span><i className="kc-icon-providers"></i></a>
-                            </li>
-                            <li id="google" className="login-pf-social-link"><a
-                                href="/auth/realms/master/broker/google/login?client_id=security-admin-console&amp;tab_id=Jq6wbPGNDCc&amp;session_code=nDoE1M1eer1fD6zwfPbmqnP6iG95sGAJlwlS4wLXuU8"
-                                id="social-google" className="kc-social-item"><span>Google</span><i className="kc-icon-providers"></i></a></li>
-                            <li id="microsoft" className="login-pf-social-link"><a
-                                href="/auth/realms/master/broker/microsoft/login?client_id=security-admin-console&amp;tab_id=Jq6wbPGNDCc&amp;session_code=nDoE1M1eer1fD6zwfPbmqnP6iG95sGAJlwlS4wLXuU8"
-                                id="social-microsoft" className="kc-social-item"><span>Microsoft</span><i className="kc-icon-providers"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-
                 </div>
             }
             infoNode={
