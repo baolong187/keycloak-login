@@ -176,7 +176,7 @@ div.kc-logo-text {
     font-size: 16px;
     line-height: 21px;
     /* identical to box height */
-    padding: 7px 0;
+    padding: 8px 0;
     color: #747474;
     display: block;
     cursor: pointer;
@@ -299,10 +299,13 @@ div.kc-logo-text {
 
 #kc-form-wrapper {
     border: none;
-    margin-bottom: 30px;
     padding: 0 41px 30px;
-    border-bottom: 1px solid #dfdfdf;
 }
+
+#kc-social-providers{
+    border-top: 1px solid #dfdfdf;
+}
+
 
 .login-pf-page .login-pf-social-section:last-of-type {
     border: none;
@@ -312,7 +315,7 @@ div.kc-logo-text {
 
 .login-pf-page .card-pf {
     max-width: 525px;
-    padding: 0 0 10px;
+    padding: 0 0 1px;
 }
 
 .login-pf-header {
@@ -322,3 +325,17 @@ div.kc-logo-text {
 .login-pf-page .kc-container-alert {
     padding: 0 40px;
 }
+
+.kc-label-providers {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    /* identical to box height */
+    color: #00419F;
+    text-align: center;
+    padding: 28px 0;
+}
+
+#kc-info {margin-top: 20px;}

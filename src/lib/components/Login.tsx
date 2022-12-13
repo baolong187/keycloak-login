@@ -207,6 +207,7 @@ const Login = memo((props: LoginProps) => {
                     </div>
                     {realm.password && social.providers !== undefined && (
                         <div id="kc-social-providers" className={clsx(kcProps.kcFormSocialAccountContentClass, kcProps.kcFormSocialAccountClass)}>
+                            <div className="kc-label-providers"> Hoặc bạn có thể đăng nhập qua </div>
                             <ul
                                 className={clsx(
                                     kcProps.kcFormSocialAccountListClass,
