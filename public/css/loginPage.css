@@ -299,7 +299,7 @@ div.kc-logo-text {
 
 #kc-form-wrapper {
     border: none;
-    margin-bottom: 30px;
+    margin-bottom: 38px;
     padding: 0;
 }
 
@@ -315,6 +315,7 @@ div.kc-logo-text {
 
 .login-pf-page .card-pf {
     max-width: 525px;
+    padding: 20px 40px 15px 40px;
 }
 
 .kc-solid-form {height: 1px;background: #dfdfdf;margin-left: -40px;margin-right: -40px;}

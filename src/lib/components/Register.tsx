@@ -23,13 +23,13 @@ const Register = memo((props: RegisterProps) => {
     return (
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
-            headerNode={msg("registerTitle")}
+            headerNode={"Tạo tài khoản"}
             formNode={
                 <form id="kc-register-form" className={clsx(kcProps.kcFormClass)} action={url.registrationAction} method="post">
                     <div className={clsx(kcProps.kcFormGroupClass, messagesPerField.printIfExists("firstName", kcProps.kcFormGroupErrorClass))}>
                         <div className={clsx(kcProps.kcLabelWrapperClass)}>
                             <label htmlFor="firstName" className={clsx(kcProps.kcLabelClass)}>
-                                {msg("firstName")}
+                                {"Họ"}
                             </label>
                         </div>
                         <div className={clsx(kcProps.kcInputWrapperClass)}>
@@ -46,7 +46,7 @@ const Register = memo((props: RegisterProps) => {
                     <div className={clsx(kcProps.kcFormGroupClass, messagesPerField.printIfExists("lastName", kcProps.kcFormGroupErrorClass))}>
                         <div className={clsx(kcProps.kcLabelWrapperClass)}>
                             <label htmlFor="lastName" className={clsx(kcProps.kcLabelClass)}>
-                                {msg("lastName")}
+                                {"Tên"}
                             </label>
                         </div>
                         <div className={clsx(kcProps.kcInputWrapperClass)}>
@@ -81,7 +81,7 @@ const Register = memo((props: RegisterProps) => {
                         <div className={clsx(kcProps.kcFormGroupClass, messagesPerField.printIfExists("username", kcProps.kcFormGroupErrorClass))}>
                             <div className={clsx(kcProps.kcLabelWrapperClass)}>
                                 <label htmlFor="username" className={clsx(kcProps.kcLabelClass)}>
-                                    {msg("username")}
+                                    {"Tài khoản"}
                                 </label>
                             </div>
                             <div className={clsx(kcProps.kcInputWrapperClass)}>
@@ -103,7 +103,7 @@ const Register = memo((props: RegisterProps) => {
                             >
                                 <div className={clsx(kcProps.kcLabelWrapperClass)}>
                                     <label htmlFor="password" className={clsx(kcProps.kcLabelClass)}>
-                                        {msg("password")}
+                                        {"Mật khẩu"}
                                     </label>
                                 </div>
                                 <div className={clsx(kcProps.kcInputWrapperClass)}>
@@ -125,7 +125,7 @@ const Register = memo((props: RegisterProps) => {
                             >
                                 <div className={clsx(kcProps.kcLabelWrapperClass)}>
                                     <label htmlFor="password-confirm" className={clsx(kcProps.kcLabelClass)}>
-                                        {msg("passwordConfirm")}
+                                        {"Nhập lại mật khẩu"}
                                     </label>
                                 </div>
                                 <div className={clsx(kcProps.kcInputWrapperClass)}>
@@ -145,21 +145,21 @@ const Register = memo((props: RegisterProps) => {
                         <div id="kc-form-options" className={clsx(kcProps.kcFormOptionsClass)}>
                             <div className={clsx(kcProps.kcFormOptionsWrapperClass)}>
                                 <span>
-                                    <a href={url.loginUrl}>{msg("backToLogin")}</a>
+                                    <a href={url.loginUrl}>{"Quay lại đăng nhập"}</a>
                                 </span>
                             </div>
                         </div>
 
                         <div id="kc-form-buttons" className={clsx(kcProps.kcFormButtonsClass)}>
                             <input
-                                className={clsx(
+                                className={`${clsx(
                                     kcProps.kcButtonClass,
                                     kcProps.kcButtonPrimaryClass,
                                     kcProps.kcButtonBlockClass,
                                     kcProps.kcButtonLargeClass
-                                )}
+                                )} kc-button`}
                                 type="submit"
-                                value={msgStr("doRegister")}
+                                value={"Đăng ký"}
                             />
                         </div>
                     </div>

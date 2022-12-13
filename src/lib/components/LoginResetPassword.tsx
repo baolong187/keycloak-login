@@ -24,7 +24,7 @@ const LoginResetPassword = memo((props: LoginResetPasswordProps) => {
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
             displayMessage={false}
-            headerNode={msg("emailForgotTitle")}
+            headerNode={"Lấy lại mật khẩu"}
             formNode={
                 <form id="kc-reset-password-form" className={clsx(kcProps.kcFormClass)} action={url.loginAction} method="post">
                     <div className={clsx(kcProps.kcFormGroupClass)}>
@@ -52,21 +52,21 @@ const LoginResetPassword = memo((props: LoginResetPasswordProps) => {
                         <div id="kc-form-options" className={clsx(kcProps.kcFormOptionsClass)}>
                             <div className={clsx(kcProps.kcFormOptionsWrapperClass)}>
                                 <span>
-                                    <a href={url.loginUrl}>{msg("backToLogin")}</a>
+                                    <a href={url.loginUrl}>{"Quay lại đăng nhập"}</a>
                                 </span>
                             </div>
                         </div>
 
                         <div id="kc-form-buttons" className={clsx(kcProps.kcFormButtonsClass)}>
                             <input
-                                className={clsx(
+                                className={`${clsx(
                                     kcProps.kcButtonClass,
                                     kcProps.kcButtonPrimaryClass,
                                     kcProps.kcButtonBlockClass,
                                     kcProps.kcButtonLargeClass
-                                )}
+                                )} kc-button`}
                                 type="submit"
-                                value={msgStr("doSubmit")}
+                                value={"Xác nhận"}
                             />
                         </div>
                     </div>
