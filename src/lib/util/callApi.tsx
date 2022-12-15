@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export default async function callApi(endpoint: string, method: string = 'get', body: object, header: object) {
+export default async function callApi(endpoint: string, method: string = 'get', body: object = {}, header: object = {}) {
     try {
 
         let dataQuery: any = { data: body }
@@ -18,7 +18,6 @@ export default async function callApi(endpoint: string, method: string = 'get', 
                 ...header
             }
         })
-
 
         return response.data
     } catch (err: any) {

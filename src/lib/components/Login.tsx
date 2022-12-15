@@ -10,7 +10,7 @@ import type { I18n } from "../i18n";
 import { message } from "antd";
 import callApi from "../util/callApi"
 
-const BASE_URL = "https://api-dev-rnd.cmctelecom.vn/api/v2/crm-service/account/";
+const BASE_URL = "https://api-dev-rnd.cmctelecom.vn/api/v2/crm-service/";
 
 export type LoginProps = KcProps & {
     kcContext: KcContextBase.Login;
@@ -26,6 +26,8 @@ const Login = memo((props: LoginProps) => {
 
     const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
     const [activeStep, setActiveStep] = React.useState(0);
+    const [listEmail, setListEmail] = React.useState(null);
+    const [isChooseEmail, setIsChooseEmail] = React.useState(false);
     const [username, setUsername] = React.useState(login.username || "");
 
 
@@ -51,16 +53,34 @@ const Login = memo((props: LoginProps) => {
         setUsername(value)
     }
 
-    const handleNext = () => {
+    const callApiGetEmailByNumber = async (phoneNumber: string) => {
+        const listEmail = await callApi(`${BASE_URL}account/get-email-by-phone/${phoneNumber}`, "GET", {});
+        const { result } = listEmail || {};
+        if (!(listEmail && result.length)) {
+            return false;
+        }
+        setIsChooseEmail(true)
+        setListEmail(result)
+        return true;
+    }
+
+    const handleNext = async () => {
         if (!username) {
             message.error("Vui lòng nhập tài khoản hoặc email", 3)
             return
         }
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        let isChoose = false;
+        if (!validateEmail(username)) {
+            const data = await callApiGetEmailByNumber(username);
+            if (data) { isChoose = true }
+        }
+        const step = isChoose ? 1 : 2;
+        setActiveStep((prevActiveStep) => prevActiveStep + step);
     };
 
     const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+        const step = isChooseEmail ? 1 : 2;
+        setActiveStep((prevActiveStep) => prevActiveStep - step);
     };
 
     return (
@@ -123,9 +143,12 @@ const Login = memo((props: LoginProps) => {
                                         );
                                     })()}
                                 </div>
-
-
                                 <div className={`${clsx(kcProps.kcFormGroupClass)} ${[1].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
+                                    <h2>aasdasd</h2>
+                                </div>
+
+
+                                <div className={`${clsx(kcProps.kcFormGroupClass)} ${[2].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
                                     <div className="kc-container-back">
                                         <button type="button" className="kc-button-login-back" onClick={handleBack} />
                                         <span> {username} </span>
@@ -153,7 +176,7 @@ const Login = memo((props: LoginProps) => {
 
 
                                 <div className={clsx(kcProps.kcFormGroupClass, kcProps.kcFormSettingClass)}>
-                                    <div id="kc-form-options" className={`${clsx(kcProps.kcFormGroupClass)} ${[1].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
+                                    <div id="kc-form-options" className={`${clsx(kcProps.kcFormGroupClass)} ${[2].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
                                         {realm.rememberMe && !usernameEditDisabled && (
                                             <div className="checkbox">
                                                 <label className="rememberMeContainer">
@@ -179,10 +202,13 @@ const Login = memo((props: LoginProps) => {
 
                                 <div id="kc-form-buttons" className={clsx(kcProps.kcFormGroupClass)}>
                                     <input type="hidden" id="id-hidden-input" name="credentialId" {...(auth?.selectedCredential !== undefined ? { "value": auth.selectedCredential } : {})} />
-                                    {[0].includes(activeStep) && (
+                                    {[1].includes(activeStep) && (
+                                        <button type="button" className="kc-button kc-button-login-next" onClick={handleBack} > Quay lại </button>
+                                    )}
+                                    {[0, 1].includes(activeStep) && (
                                         <button type="button" className="kc-button kc-button-login-next" onClick={handleNext} > Tiếp theo </button>
                                     )}
-                                    {[1].includes(activeStep) && (
+                                    {[2].includes(activeStep) && (
                                         <>
                                             <input
                                                 tabIndex={4}
