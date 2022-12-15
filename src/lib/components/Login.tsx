@@ -108,10 +108,10 @@ const Login = memo((props: LoginProps) => {
                                                     className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
                                                     name={autoCompleteHelper}
                                                     // defaultValue={login.username ?? ""}
-                                                    defaultValue={username || ""}
+                                                    // defaultValue={username || ""}
                                                     type="text"
                                                     onChange={onChangeInputUsername}
-                                                    // value={username || ""}
+                                                    value={username || ""}
                                                     {...(usernameEditDisabled
                                                         ? { "disabled": true }
                                                         : {
