@@ -8,7 +8,9 @@ import { useConstCallback } from "powerhooks/useConstCallback";
 import type { FormEventHandler } from "react";
 import type { I18n } from "../i18n";
 import { message } from "antd";
+import callApi from "../util/callApi"
 
+const BASE_URL = "https://api-dev-rnd.cmctelecom.vn/api/v2/crm-service/account/";
 
 export type LoginProps = KcProps & {
     kcContext: KcContextBase.Login;
@@ -33,7 +35,6 @@ const Login = memo((props: LoginProps) => {
         const formElement = e.target as HTMLFormElement;
 
         formElement.querySelector("input[name='email']")?.setAttribute("name", "username");
-
         formElement.submit();
     });
 
@@ -61,7 +62,6 @@ const Login = memo((props: LoginProps) => {
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
-
 
     return (
         <Template
@@ -123,7 +123,6 @@ const Login = memo((props: LoginProps) => {
                                         );
                                     })()}
                                 </div>
-
 
 
                                 <div className={`${clsx(kcProps.kcFormGroupClass)} ${[1].includes(activeStep) ? "kc-active" : "kc-hide"}`}>

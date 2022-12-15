@@ -22,7 +22,7 @@ export default async function callApi(endpoint: string, method: string = 'get', 
 
         return response.data
     } catch (err: any) {
-        return;
+        return false;
     }
 
 }
