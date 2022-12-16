@@ -101,7 +101,7 @@ const Login = React.memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_
     //         <input
     //             className={clsx(props.kcButtonClass, props.kcButtonPrimaryClass, props.kcButtonBlockClass, props.kcButtonLargeClass)}
     //             type="submit"
-    //             value={msgStr("doLogIn")}
+    //             value={"Đăng nhập"}
     //         />
     //     </div>
     // </form>
@@ -192,7 +192,7 @@ const Login = React.memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_
                     fullWidth
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
-                >{msgStr("doLogIn")}</Button>
+                >{"Đăng nhập"}</Button>
             </Box>
             </Box>
             <Copyright sx={{ mt: 8, mb: 4 }} />

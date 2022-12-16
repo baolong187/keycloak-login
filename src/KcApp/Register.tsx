@@ -153,7 +153,7 @@ const Register = memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_Reg
                             <input
                                 className={clsx(props.kcButtonClass, props.kcButtonPrimaryClass, props.kcButtonBlockClass, props.kcButtonLargeClass)}
                                 type="submit"
-                                value={msgStr("doRegister")}
+                                value={"Đăng ký"}
                             />
                         </div>
                     </div>

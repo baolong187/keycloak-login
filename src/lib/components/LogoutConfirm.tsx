@@ -47,7 +47,7 @@ const LogoutConfirm = memo((props: LogoutConfirmProps) => {
                                         name="confirmLogout"
                                         id="kc-logout"
                                         type="submit"
-                                        value={msgStr("doLogout")}
+                                        value={"Đăng xuất"}
                                     />
                                 </div>
                             </div>
@@ -55,7 +55,7 @@ const LogoutConfirm = memo((props: LogoutConfirmProps) => {
                         <div id="kc-info-message">
                             {!logoutConfirm.skipLink && client.baseUrl && (
                                 <p>
-                                    <a href={client.baseUrl} dangerouslySetInnerHTML={{ __html: msgStr("backToApplication") }} />
+                                    <a href={client.baseUrl} dangerouslySetInnerHTML={{ __html: "Quay lại màn đăng nhập" }} />
                                 </p>
                             )}
                         </div>

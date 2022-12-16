@@ -101,7 +101,7 @@ const LoginUpdateProfile = memo((props: LoginUpdateProfile) => {
                                     <input
                                         className={clsx(kcProps.kcButtonClass, kcProps.kcButtonPrimaryClass, kcProps.kcButtonLargeClass)}
                                         type="submit"
-                                        defaultValue={msgStr("doSubmit")}
+                                        defaultValue={"Gửi"}
                                     />
                                     <button
                                         className={clsx(kcProps.kcButtonClass, kcProps.kcButtonDefaultClass, kcProps.kcButtonLargeClass)}
@@ -121,7 +121,7 @@ const LoginUpdateProfile = memo((props: LoginUpdateProfile) => {
                                         kcProps.kcButtonLargeClass
                                     )}
                                     type="submit"
-                                    defaultValue={msgStr("doSubmit")}
+                                    defaultValue={"Gửi"}
                                 />
                             )}
                         </div>

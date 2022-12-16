@@ -81,7 +81,7 @@ const LoginUpdatePassword = memo((props: LoginUpdatePasswordProps) => {
                                     <div className="checkbox">
                                         <label>
                                             <input type="checkbox" id="logout-sessions" name="logout-sessions" value="on" checked />
-                                            {msgStr("logoutOtherSessions")}
+                                            {"Đăng xuất từ các thiết bị khác"}
                                         </label>
                                     </div>
                                 )}
@@ -94,7 +94,7 @@ const LoginUpdatePassword = memo((props: LoginUpdatePasswordProps) => {
                                     <input
                                         className={clsx(kcProps.kcButtonClass, kcProps.kcButtonPrimaryClass, kcProps.kcButtonLargeClass)}
                                         type="submit"
-                                        defaultValue={msgStr("doSubmit")}
+                                        defaultValue={"Gửi"}
                                     />
                                     <button
                                         className={clsx(kcProps.kcButtonClass, kcProps.kcButtonDefaultClass, kcProps.kcButtonLargeClass)}
@@ -114,7 +114,7 @@ const LoginUpdatePassword = memo((props: LoginUpdatePasswordProps) => {
                                         kcProps.kcButtonLargeClass
                                     )}
                                     type="submit"
-                                    defaultValue={msgStr("doSubmit")}
+                                    defaultValue={"Gửi"}
                                 />
                             )}
                         </div>

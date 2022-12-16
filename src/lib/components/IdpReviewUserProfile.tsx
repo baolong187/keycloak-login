@@ -44,7 +44,7 @@ const IdpReviewUserProfile = memo((props: IdpReviewUserProfileProps) => {
                                     kcProps.kcButtonLargeClass
                                 )}
                                 type="submit"
-                                value={msgStr("doSubmit")}
+                                value={"Gửi"}
                                 disabled={!isFomSubmittable}
                             />
                         </div>

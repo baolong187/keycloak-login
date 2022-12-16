@@ -57,7 +57,7 @@ const RegisterUserProfile = memo((props: RegisterUserProfileProps) => {
                                     kcProps.kcButtonLargeClass
                                 )}
                                 type="submit"
-                                value={msgStr("doRegister")}
+                                value={"Đăng ký"}
                                 disabled={!isFomSubmittable}
                             />
                         </div>

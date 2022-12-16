@@ -88,7 +88,7 @@ const LoginOtp = memo((props: LoginOtpProps) => {
                                 name="login"
                                 id="kc-login"
                                 type="submit"
-                                value={msgStr("doLogIn")}
+                                value={"Đăng nhập"}
                             />
                         </div>
                     </div>

@@ -96,14 +96,14 @@ const Terms = memo((props: TermsProps) => {
                             name="accept"
                             id="kc-accept"
                             type="submit"
-                            value={msgStr("doAccept")}
+                            value={"Chấp nhận"}
                         />
                         <input
                             className={clsx(kcProps.kcButtonClass, kcProps.kcButtonDefaultClass, kcProps.kcButtonLargeClass)}
                             name="cancel"
                             id="kc-decline"
                             type="submit"
-                            value={msgStr("doDecline")}
+                            value={"Từ chối"}
                         />
                     </form>
                     <div className="clearfix" />

@@ -39,7 +39,7 @@ const WebauthnAuthenticate = memo((props: WebauthnAuthenticateProps) => {
         );
         // Check if WebAuthn is supported by this browser
         if (!window.PublicKeyCredential) {
-            setError(msgStr("webauthn-unsupported-browser-text"));
+            setError("WebAuthen không được hỗ trợ bởi trình duyệt này. Hãy thử cái khác hoặc liên hệ với quản trị viên của bạn.");
             submitForm();
             return;
         }
@@ -98,7 +98,7 @@ const WebauthnAuthenticate = memo((props: WebauthnAuthenticateProps) => {
     return (
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
-            headerNode={msg("webauthn-login-title")}
+            headerNode={"Đăng nhập khóa bảo mật"}
             formNode={
                 <div id="kc-form-webauthn" className={clsx(kcProps.kcFormClass)}>
                     <form id="webauth" action={url.loginAction} ref={webAuthForm} method="post">
@@ -184,7 +184,7 @@ const WebauthnAuthenticate = memo((props: WebauthnAuthenticateProps) => {
                                 type="button"
                                 onClick={webAuthnAuthenticate}
                                 autoFocus={true}
-                                value={msgStr("webauthn-doAuthenticate")}
+                                value={"Đăng nhập bằng mã bảo mật"}
                                 className={clsx(
                                     kcProps.kcButtonClass,
                                     kcProps.kcButtonPrimaryClass,

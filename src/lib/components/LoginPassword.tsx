@@ -82,7 +82,7 @@ const LoginPassword = memo((props: LoginPasswordProps) => {
                                     name="login"
                                     id="kc-login"
                                     type="submit"
-                                    value={msgStr("doLogIn")}
+                                    value={"Đăng nhập"}
                                     disabled={isLoginButtonDisabled}
                                 />
                             </div>

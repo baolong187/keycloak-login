@@ -42,7 +42,7 @@ const UpdateUserProfile = memo((props: UpdateUserProfileProps) => {
                                     <input
                                         className={clsx(kcProps.kcButtonClass, kcProps.kcButtonPrimaryClass, kcProps.kcButtonLargeClass)}
                                         type="submit"
-                                        value={msgStr("doSubmit")}
+                                        value={"Gửi"}
                                     />
                                     <button
                                         className={clsx(kcProps.kcButtonClass, kcProps.kcButtonDefaultClass, kcProps.kcButtonLargeClass)}
@@ -63,7 +63,7 @@ const UpdateUserProfile = memo((props: UpdateUserProfileProps) => {
                                         kcProps.kcButtonLargeClass
                                     )}
                                     type="submit"
-                                    defaultValue={msgStr("doSubmit")}
+                                    defaultValue={"Gửi"}
                                     disabled={!isFomSubmittable}
                                 />
                             )}
