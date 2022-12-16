@@ -40,7 +40,7 @@ const LoginUpdatePassword = memo((props: LoginUpdatePasswordProps) => {
                     <div className={clsx(kcProps.kcFormGroupClass, messagesPerField.printIfExists("password", kcProps.kcFormGroupErrorClass))}>
                         <div className={clsx(kcProps.kcLabelWrapperClass)}>
                             <label htmlFor="password-new" className={clsx(kcProps.kcLabelClass)}>
-                                {msg("passwordNew")}
+                                {"Mật khẩu mới"}
                             </label>
                         </div>
                         <div className={clsx(kcProps.kcInputWrapperClass)}>
@@ -60,7 +60,7 @@ const LoginUpdatePassword = memo((props: LoginUpdatePasswordProps) => {
                     >
                         <div className={clsx(kcProps.kcLabelWrapperClass)}>
                             <label htmlFor="password-confirm" className={clsx(kcProps.kcLabelClass)}>
-                                {msg("passwordConfirm")}
+                                {"Xác nhận mật khẩu"}
                             </label>
                         </div>
                         <div className={clsx(kcProps.kcInputWrapperClass)}>

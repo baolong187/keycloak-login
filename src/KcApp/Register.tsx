@@ -30,7 +30,7 @@ const Register = memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_Reg
                     <div className={clsx(props.kcFormGroupClass, messagesPerField.printIfExists("firstName", props.kcFormGroupErrorClass))}>
                         <div className={clsx(props.kcLabelWrapperClass)}>
                             <label htmlFor="firstName" className={clsx(props.kcLabelClass)}>
-                                {msg("firstName")}
+                                {"Tên"}
                             </label>
                         </div>
                         <div className={clsx(props.kcInputWrapperClass)}>
@@ -47,7 +47,7 @@ const Register = memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_Reg
                     <div className={clsx(props.kcFormGroupClass, messagesPerField.printIfExists("lastName", props.kcFormGroupErrorClass))}>
                         <div className={clsx(props.kcLabelWrapperClass)}>
                             <label htmlFor="lastName" className={clsx(props.kcLabelClass)}>
-                                {msg("lastName")}
+                                {"Họ"}
                             </label>
                         </div>
                         <div className={clsx(props.kcInputWrapperClass)}>
@@ -64,7 +64,7 @@ const Register = memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_Reg
                     <div className={clsx(props.kcFormGroupClass, messagesPerField.printIfExists("email", props.kcFormGroupErrorClass))}>
                         <div className={clsx(props.kcLabelWrapperClass)}>
                             <label htmlFor="email" className={clsx(props.kcLabelClass)}>
-                                {msg("email")}
+                                {"Email"}
                             </label>
                         </div>
                         <div className={clsx(props.kcInputWrapperClass)}>
@@ -82,7 +82,7 @@ const Register = memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_Reg
                         <div className={clsx(props.kcFormGroupClass, messagesPerField.printIfExists("username", props.kcFormGroupErrorClass))}>
                             <div className={clsx(props.kcLabelWrapperClass)}>
                                 <label htmlFor="username" className={clsx(props.kcLabelClass)}>
-                                    {msg("username")}
+                                    {"Tên tài khoản"}
                                 </label>
                             </div>
                             <div className={clsx(props.kcInputWrapperClass)}>
@@ -102,7 +102,7 @@ const Register = memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_Reg
                             <div className={clsx(props.kcFormGroupClass, messagesPerField.printIfExists("password", props.kcFormGroupErrorClass))}>
                                 <div className={clsx(props.kcLabelWrapperClass)}>
                                     <label htmlFor="password" className={clsx(props.kcLabelClass)}>
-                                        {msg("password")}
+                                        {"Mật khẩu"}
                                     </label>
                                 </div>
                                 <div className={clsx(props.kcInputWrapperClass)}>
@@ -124,7 +124,7 @@ const Register = memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_Reg
                             >
                                 <div className={clsx(props.kcLabelWrapperClass)}>
                                     <label htmlFor="password-confirm" className={clsx(props.kcLabelClass)}>
-                                        {msg("passwordConfirm")}
+                                        {"Xác nhận mật khẩu"}
                                     </label>
                                 </div>
                                 <div className={clsx(props.kcInputWrapperClass)}>

@@ -45,7 +45,7 @@ const LoginPassword = memo((props: LoginPasswordProps) => {
                             <div className={clsx(kcProps.kcFormGroupClass)}>
                                 <hr />
                                 <label htmlFor="password" className={clsx(kcProps.kcLabelClass)}>
-                                    {msg("password")}
+                                    {"Mật khẩu"}
                                 </label>
                                 <input
                                     tabIndex={2}

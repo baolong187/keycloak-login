@@ -104,7 +104,7 @@ const LoginConfigTotp = memo((props: LoginConfigTotpProps) => {
                         <div className={clsx(kcProps.kcFormGroupClass)}>
                             <div className={clsx(kcProps.kcInputWrapperClass)}>
                                 <label htmlFor="totp" className={clsx(kcProps.kcLabelClass)}>
-                                    {msg("authenticatorCode")}
+                                    {"Mã một lần"}
                                 </label>{" "}
                                 <span className="required">*</span>
                             </div>

@@ -62,7 +62,7 @@ const Login = React.memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_
     //         <div className={clsx(props.kcFormGroupClass, messagesPerField.printIfExists("username", props.kcFormGroupErrorClass))}>
     //             <div className={clsx(props.kcLabelWrapperClass)}>
     //                 <label htmlFor="username" className={clsx(props.kcLabelClass)}>
-    //                     {msg("username")}
+    //                     {"Tên tài khoản"}
     //                 </label>
     //             </div>
     //             <div className={clsx(props.kcInputWrapperClass)}>
@@ -81,7 +81,7 @@ const Login = React.memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_
     //             <div className={clsx(props.kcFormGroupClass, messagesPerField.printIfExists("password", props.kcFormGroupErrorClass))}>
     //                 <div className={clsx(props.kcLabelWrapperClass)}>
     //                     <label htmlFor="password" className={clsx(props.kcLabelClass)}>
-    //                         {msg("password")}
+    //                         {"Mật khẩu"}
     //                     </label>
     //                 </div>
     //                 <div className={clsx(props.kcInputWrapperClass)}>

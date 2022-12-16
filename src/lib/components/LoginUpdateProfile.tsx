@@ -30,7 +30,7 @@ const LoginUpdateProfile = memo((props: LoginUpdateProfile) => {
                         <div className={clsx(kcProps.kcFormGroupClass, messagesPerField.printIfExists("username", kcProps.kcFormGroupErrorClass))}>
                             <div className={clsx(kcProps.kcLabelWrapperClass)}>
                                 <label htmlFor="username" className={clsx(kcProps.kcLabelClass)}>
-                                    {msg("username")}
+                                    {"Tên tài khoản"}
                                 </label>
                             </div>
                             <div className={clsx(kcProps.kcInputWrapperClass)}>
@@ -48,7 +48,7 @@ const LoginUpdateProfile = memo((props: LoginUpdateProfile) => {
                     <div className={clsx(kcProps.kcFormGroupClass, messagesPerField.printIfExists("email", kcProps.kcFormGroupErrorClass))}>
                         <div className={clsx(kcProps.kcLabelWrapperClass)}>
                             <label htmlFor="email" className={clsx(kcProps.kcLabelClass)}>
-                                {msg("email")}
+                                {"Email"}
                             </label>
                         </div>
                         <div className={clsx(kcProps.kcInputWrapperClass)}>
@@ -59,7 +59,7 @@ const LoginUpdateProfile = memo((props: LoginUpdateProfile) => {
                     <div className={clsx(kcProps.kcFormGroupClass, messagesPerField.printIfExists("firstName", kcProps.kcFormGroupErrorClass))}>
                         <div className={clsx(kcProps.kcLabelWrapperClass)}>
                             <label htmlFor="firstName" className={clsx(kcProps.kcLabelClass)}>
-                                {msg("firstName")}
+                                {"Tên"}
                             </label>
                         </div>
                         <div className={clsx(kcProps.kcInputWrapperClass)}>
@@ -76,7 +76,7 @@ const LoginUpdateProfile = memo((props: LoginUpdateProfile) => {
                     <div className={clsx(kcProps.kcFormGroupClass, messagesPerField.printIfExists("lastName", kcProps.kcFormGroupErrorClass))}>
                         <div className={clsx(kcProps.kcLabelWrapperClass)}>
                             <label htmlFor="lastName" className={clsx(kcProps.kcLabelClass)}>
-                                {msg("lastName")}
+                                {"Họ"}
                             </label>
                         </div>
                         <div className={clsx(kcProps.kcInputWrapperClass)}>

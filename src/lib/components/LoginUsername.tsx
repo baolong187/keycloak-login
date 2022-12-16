@@ -103,7 +103,7 @@ const LoginUsername = memo((props: LoginUsernameProps) => {
                                                               }
                                                             : {})}
                                                     />
-                                                    {msg("rememberMe")}
+                                                    {"Ghi nhớ"}
                                                 </label>
                                             </div>
                                         )}
@@ -154,7 +154,7 @@ const LoginUsername = memo((props: LoginUsernameProps) => {
                 !registrationDisabled && (
                     <div id="kc-registration">
                         <span>
-                            {msg("noAccount")}
+                            {"Người dùng mới?"}
                             <a tabIndex={6} href={url.registrationUrl}>
                                 {"Đăng ký"}
                             </a>

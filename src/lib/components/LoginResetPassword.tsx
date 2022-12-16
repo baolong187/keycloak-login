@@ -31,10 +31,10 @@ const LoginResetPassword = memo((props: LoginResetPasswordProps) => {
                         <div className={clsx(kcProps.kcLabelWrapperClass)}>
                             <label htmlFor="username" className={clsx(kcProps.kcLabelClass)}>
                                 {!realm.loginWithEmailAllowed
-                                    ? msg("username")
+                                    ? "Tên tài khoản"
                                     : !realm.registrationEmailAsUsername
-                                    ? msg("usernameOrEmail")
-                                    : msg("email")}
+                                    ? "Tên người dùng hoặc email"
+                                    : "Email"}
                             </label>
                         </div>
                         <div className={clsx(kcProps.kcInputWrapperClass)}>

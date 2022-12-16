@@ -63,7 +63,7 @@ const Register = memo((props: RegisterProps) => {
                     <div className={clsx(kcProps.kcFormGroupClass, messagesPerField.printIfExists("email", kcProps.kcFormGroupErrorClass))}>
                         <div className={clsx(kcProps.kcLabelWrapperClass)}>
                             <label htmlFor="email" className={clsx(kcProps.kcLabelClass)}>
-                                {msg("email")}
+                                {"Email"}
                             </label>
                         </div>
                         <div className={clsx(kcProps.kcInputWrapperClass)}>

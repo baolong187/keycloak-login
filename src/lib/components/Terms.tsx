@@ -80,7 +80,7 @@ const Terms = memo((props: TermsProps) => {
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
             displayMessage={false}
-            headerNode={msg("termsTitle")}
+            headerNode={"Các điều khoản và điều kiện"}
             formNode={
                 <>
                     <div id="kc-terms-text">{evtTermMarkdown.state && <Markdown>{evtTermMarkdown.state}</Markdown>}</div>
