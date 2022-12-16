@@ -79,18 +79,20 @@ const Login = memo((props: LoginProps) => {
         }
         let isChoose = false;
         let usernameLogin = inputUsername;
+        let sChooseEmail = "";
         if (!validateEmail(inputUsername)) {
             const data = await callApiGetEmailByNumber(inputUsername);
             if (data) {
                 if (data.length == 1) {
                     usernameLogin = data[0]
+                    sChooseEmail = data[0]
                 } else { isChoose = true }
             }
         }
 
         setUsername(usernameLogin)
         setIsChooseEmail(isChoose)
-        setChooseEmail("")
+        setChooseEmail(sChooseEmail)
         const step = isChoose ? 1 : 2;
         setActiveStep((prevActiveStep) => prevActiveStep + step);
     };
@@ -210,7 +212,7 @@ const Login = memo((props: LoginProps) => {
                                 <div className={`${clsx(kcProps.kcFormGroupClass)} ${[2].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
                                     <div className="kc-container-back">
                                         <button type="button" className="kc-button-login-back" onClick={handleBack} />
-                                        <span> {username} </span>
+                                        <span> {inputUsername} {chooseEmail? `- ${chooseEmail}`: ""} </span>
                                     </div>
 
                                     <div className="kc-head-input">
