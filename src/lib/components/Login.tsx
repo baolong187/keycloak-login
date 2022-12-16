@@ -9,9 +9,10 @@ import type { FormEventHandler } from "react";
 import type { I18n } from "../i18n";
 import { message } from "antd";
 import callApi from "../util/callApi"
+import { Select } from 'antd';
 
 const BASE_URL = "https://api-dev-rnd.cmctelecom.vn/api/v2/crm-service/";
-
+const { Option } = Select;
 export type LoginProps = KcProps & {
     kcContext: KcContextBase.Login;
     i18n: I18n;
@@ -26,9 +27,11 @@ const Login = memo((props: LoginProps) => {
 
     const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
     const [activeStep, setActiveStep] = React.useState(0);
-    const [listEmail, setListEmail] = React.useState(null);
+    const [listEmail, setListEmail] = React.useState<any[]>([]);
     const [isChooseEmail, setIsChooseEmail] = React.useState(false);
     const [username, setUsername] = React.useState(login.username || "");
+    const [inputUsername, setInputUsername] = React.useState(login.username || "");
+    const [chooseEmail, setChooseEmail] = React.useState("");
 
 
     const onSubmit = useConstCallback<FormEventHandler<HTMLFormElement>>(e => {
@@ -50,7 +53,7 @@ const Login = memo((props: LoginProps) => {
 
     const onChangeInputUsername = (event: any) => {
         const { name, value } = event.target;
-        setUsername(value)
+        setInputUsername(value)
     }
 
     const callApiGetEmailByNumber = async (phoneNumber: string) => {
@@ -59,21 +62,35 @@ const Login = memo((props: LoginProps) => {
         if (!(listEmail && result.length)) {
             return false;
         }
-        setIsChooseEmail(true)
         setListEmail(result)
-        return true;
+        return result;
     }
 
     const handleNext = async () => {
-        if (!username) {
+        setUsername(chooseEmail)
+        const step = isChooseEmail ? 1 : 2;
+        setActiveStep((prevActiveStep) => prevActiveStep + step);
+    };
+
+    const handleNextEmail = async () => {
+        if (!inputUsername) {
             message.error("Vui lòng nhập tài khoản hoặc email", 3)
             return
         }
         let isChoose = false;
-        if (!validateEmail(username)) {
-            const data = await callApiGetEmailByNumber(username);
-            if (data) { isChoose = true }
+        let usernameLogin = inputUsername;
+        if (!validateEmail(inputUsername)) {
+            const data = await callApiGetEmailByNumber(inputUsername);
+            if (data) {
+                if (data.length == 1) {
+                    usernameLogin = data[0]
+                } else { isChoose = true }
+            }
         }
+
+        setUsername(usernameLogin)
+        setIsChooseEmail(isChoose)
+        setChooseEmail("")
         const step = isChoose ? 1 : 2;
         setActiveStep((prevActiveStep) => prevActiveStep + step);
     };
@@ -81,6 +98,15 @@ const Login = memo((props: LoginProps) => {
     const handleBack = () => {
         const step = isChooseEmail ? 1 : 2;
         setActiveStep((prevActiveStep) => prevActiveStep - step);
+    };
+
+
+    const onChangeSelected = (value: string) => {
+        setChooseEmail(value)
+    };
+
+    const onSearchSelected = (value: string) => {
+        // console.log('search:', value);
     };
 
     return (
@@ -100,7 +126,6 @@ const Login = memo((props: LoginProps) => {
                         {realm.password && (
                             <form id="kc-form-login" onSubmit={onSubmit} action={url.loginAction} method="post">
 
-
                                 <div className={`${clsx(kcProps.kcFormGroupClass)} ${[0].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
                                     {(() => {
                                         const label = !realm.loginWithEmailAllowed
@@ -113,7 +138,7 @@ const Login = memo((props: LoginProps) => {
                                         return (
                                             <>
                                                 <div className="kc-head-input">
-                                                    <label htmlFor={autoCompleteHelper} className={`${clsx(kcProps.kcLabelClass)} kc-label-input`}> Email </label>
+                                                    <label htmlFor={autoCompleteHelper} className={`${clsx(kcProps.kcLabelClass)} kc-label-input`}> Email or phonenumber </label>
                                                     <div className={`${clsx(kcProps.kcFormOptionsWrapperClass)} kc-label-forgot-password`}>
                                                         {realm.resetPasswordAllowed && (
                                                             <span>
@@ -125,13 +150,23 @@ const Login = memo((props: LoginProps) => {
                                                 <input
                                                     tabIndex={1}
                                                     id={autoCompleteHelper}
-                                                    className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
+                                                    className={`${clsx(kcProps.kcInputClass)} kc-hide`}
                                                     name={autoCompleteHelper}
-                                                    // defaultValue={login.username ?? ""}
-                                                    // defaultValue={username || ""}
+                                                    type="text"
+                                                    value={username || ""}
+                                                    {...(usernameEditDisabled
+                                                        ? { "disabled": true }
+                                                        : {
+                                                            "autoFocus": true,
+                                                            "autoComplete": "off"
+                                                        })}
+                                                />
+                                                <input
+                                                    tabIndex={1}
+                                                    className={`${clsx(kcProps.kcInputClass)} kc-form-input`}
                                                     type="text"
                                                     onChange={onChangeInputUsername}
-                                                    value={username || ""}
+                                                    value={inputUsername || ""}
                                                     {...(usernameEditDisabled
                                                         ? { "disabled": true }
                                                         : {
@@ -143,10 +178,34 @@ const Login = memo((props: LoginProps) => {
                                         );
                                     })()}
                                 </div>
-                                <div className={`${clsx(kcProps.kcFormGroupClass)} ${[1].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
-                                    <h2>aasdasd</h2>
-                                </div>
 
+                                <div className={`${clsx(kcProps.kcFormGroupClass)} ${[1].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
+                                    <div className="kc-container-back">
+                                        <button type="button" className="kc-button-login-back" onClick={handleBack} />
+                                        <span> {inputUsername} </span>
+                                    </div>
+                                    <div>
+                                        <label className={`${clsx(kcProps.kcLabelClass)} kc-label-input`}> Select your email login </label>
+                                        <div className="kc-head-input">
+                                            <Select
+                                                showSearch
+                                                placeholder="Select a email"
+                                                optionFilterProp="children"
+                                                style={{ width: "100%" }}
+                                                onSelect={onChangeSelected}
+                                                onSearch={onSearchSelected}
+                                                filterOption={(input, option) =>
+                                                    (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+                                                }
+                                                options={(listEmail || []).map(d => ({
+                                                    value: d,
+                                                    label: d,
+                                                }))}
+                                            />
+
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div className={`${clsx(kcProps.kcFormGroupClass)} ${[2].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
                                     <div className="kc-container-back">
@@ -173,7 +232,6 @@ const Login = memo((props: LoginProps) => {
                                         autoComplete="off"
                                     />
                                 </div>
-
 
                                 <div className={clsx(kcProps.kcFormGroupClass, kcProps.kcFormSettingClass)}>
                                     <div id="kc-form-options" className={`${clsx(kcProps.kcFormGroupClass)} ${[2].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
@@ -202,12 +260,15 @@ const Login = memo((props: LoginProps) => {
 
                                 <div id="kc-form-buttons" className={clsx(kcProps.kcFormGroupClass)}>
                                     <input type="hidden" id="id-hidden-input" name="credentialId" {...(auth?.selectedCredential !== undefined ? { "value": auth.selectedCredential } : {})} />
+
+                                    {[0].includes(activeStep) && (
+                                        <button type="button" className="kc-button kc-button-login-next" onClick={handleNextEmail} disabled={inputUsername ? false : true} > Tiếp theo </button>
+                                    )}
+
                                     {[1].includes(activeStep) && (
-                                        <button type="button" className="kc-button kc-button-login-next" onClick={handleBack} > Quay lại </button>
+                                        <button type="button" className="kc-button kc-button-login-next" onClick={handleNext} disabled={chooseEmail ? false : true} > Tiếp theo </button>
                                     )}
-                                    {[0, 1].includes(activeStep) && (
-                                        <button type="button" className="kc-button kc-button-login-next" onClick={handleNext} > Tiếp theo </button>
-                                    )}
+
                                     {[2].includes(activeStep) && (
                                         <>
                                             <input
@@ -222,10 +283,6 @@ const Login = memo((props: LoginProps) => {
                                         </>
 
                                     )}
-
-
-
-
                                 </div>
                             </form>
                         )}

@@ -235,6 +235,10 @@ div.kc-logo-text {
     background: #00419F;
 }
 
+.kc-button[disabled=disabled], .kc-button:disabled {
+    background: #aaa;
+}
+
 #kc-page-title {
     font-family: 'Barlow';
     font-style: normal;
