@@ -30,7 +30,7 @@ const Error = memo((props: ErrorProps) => {
                     {client !== undefined && client.baseUrl !== undefined && (
                         <p>
                             <a id="backToApplication" href={client.baseUrl}>
-                                {msg("backToApplication")}
+                                {"Quay lại màn đăng nhập"}
                             </a>
                         </p>
                     )}

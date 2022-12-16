@@ -38,16 +38,16 @@ const Info = memo((props: InfoProps) => {
                     </p>
                     {!skipLink && pageRedirectUri !== undefined ? (
                         <p>
-                            <a href={pageRedirectUri}>{msg("backToApplication")}</a>
+                            <a href={pageRedirectUri}>{"Quay lại màn đăng nhập"}</a>
                         </p>
                     ) : actionUri !== undefined ? (
                         <p>
-                            <a href={actionUri}>{msg("proceedWithAction")}</a>
+                            <a href={actionUri}>{"Vui lòng ấn vào đây để tiếp tục"}</a>
                         </p>
                     ) : (
                         client.baseUrl !== undefined && (
                             <p>
-                                <a href={client.baseUrl}>{msg("backToApplication")}</a>
+                                <a href={client.baseUrl}>{"Quay lại màn đăng nhập"}</a>
                             </p>
                         )
                     )}
