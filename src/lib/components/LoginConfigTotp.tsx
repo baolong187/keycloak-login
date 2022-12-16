@@ -34,7 +34,7 @@ const LoginConfigTotp = memo((props: LoginConfigTotpProps) => {
                 <>
                     <ol id="kc-totp-settings">
                         <li>
-                            <p>{msg("loginTotpStep1")}</p>
+                            <p>{"Cài đặt một trong các ứng dụng sau trên điện thoại di động của bạn:"}</p>
 
                             <ul id="kc-totp-supported-apps">
                                 {totp.policy.supportedApplications.map(app => (
@@ -46,36 +46,36 @@ const LoginConfigTotp = memo((props: LoginConfigTotpProps) => {
                         {mode && mode == "manual" ? (
                             <>
                                 <li>
-                                    <p>{msg("loginTotpManualStep2")}</p>
+                                    <p>{"Mở ứng dụng và nhập key:"}</p>
                                     <p>
                                         <span id="kc-totp-secret-key">{totp.totpSecretEncoded}</span>
                                     </p>
                                     <p>
                                         <a href={totp.qrUrl} id="mode-barcode">
-                                            {msg("loginTotpScanBarcode")}
+                                            {"Quét mã vạch?"}
                                         </a>
                                     </p>
                                 </li>
                                 <li>
-                                    <p>{msg("loginTotpManualStep3")}</p>
+                                    <p>{"Sử dụng các giá trị cấu hình sau nếu ứng dụng cho phép đặt chúng:"}</p>
                                     <p>
                                         <ul>
                                             <li id="kc-totp-type">
-                                                {msg("loginTotpType")}: {msg(`loginTotp.${totp.policy.type}`)}
+                                                {"Loại hình"}: {msg(`loginTotp.${totp.policy.type}`)}
                                             </li>
                                             <li id="kc-totp-algorithm">
-                                                {msg("loginTotpAlgorithm")}: {algToKeyUriAlg?.[totp.policy.algorithm] ?? totp.policy.algorithm}
+                                                {"Thuật toán"}: {algToKeyUriAlg?.[totp.policy.algorithm] ?? totp.policy.algorithm}
                                             </li>
                                             <li id="kc-totp-digits">
-                                                {msg("loginTotpDigits")}: {totp.policy.digits}
+                                                {"Chữ số"}: {totp.policy.digits}
                                             </li>
                                             {totp.policy.type === "totp" ? (
                                                 <li id="kc-totp-period">
-                                                    {msg("loginTotpInterval")}: {totp.policy.period}
+                                                    {"Khoảng thời gian"}: {totp.policy.period}
                                                 </li>
                                             ) : (
                                                 <li id="kc-totp-counter">
-                                                    {msg("loginTotpCounter")}: {totp.policy.initialCounter}
+                                                    {"Counter"}: {totp.policy.initialCounter}
                                                 </li>
                                             )}
                                         </ul>
@@ -84,19 +84,19 @@ const LoginConfigTotp = memo((props: LoginConfigTotpProps) => {
                             </>
                         ) : (
                             <li>
-                                <p>{msg("loginTotpStep2")}</p>
+                                <p>{"Mở ứng dụng và quét mã vạch:"}</p>
                                 <img id="kc-totp-secret-qr-code" src={`data:image/png;base64, ${totp.totpSecretQrCode}`} alt="Figure: Barcode" />
                                 <br />
                                 <p>
                                     <a href={totp.manualUrl} id="mode-manual">
-                                        {msg("loginTotpUnableToScan")}
+                                        {"Không thể quét?"}
                                     </a>
                                 </p>
                             </li>
                         )}
                         <li>
-                            <p>{msg("loginTotpStep3")}</p>
-                            <p>{msg("loginTotpStep3DeviceName")}</p>
+                            <p>{"Nhập mã một lần được cung cấp bởi ứng dụng và nhấp vào Gửi để hoàn thành thiết lập."}</p>
+                            <p>{"Cung cấp tên thiết bị để quản lý các thiết bị OTP của mình."}</p>
                         </li>
                     </ol>
 
@@ -131,7 +131,7 @@ const LoginConfigTotp = memo((props: LoginConfigTotpProps) => {
                         <div className={clsx(kcProps.kcFormGroupClass)}>
                             <div className={clsx(kcProps.kcInputWrapperClass)}>
                                 <label htmlFor="userLabel" className={clsx(kcProps.kcLabelClass)}>
-                                    {msg("loginTotpDeviceName")}
+                                    {"Tên thiết bị"}
                                 </label>{" "}
                                 {totp.otpCredentials.length >= 1 && <span className="required">*</span>}
                             </div>

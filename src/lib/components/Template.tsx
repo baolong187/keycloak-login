@@ -176,7 +176,7 @@ const Template = memo((props: TemplateProps) => {
                                         <a id="reset-login" href={url.loginRestartFlowUrl}>
                                             <div className="kc-login-tooltip">
                                                 <i className={clsx(props.kcResetFlowIcon)}></i>
-                                                <span className="kc-tooltip-text">{msg("restartLoginTooltip")}</span>
+                                                <span className="kc-tooltip-text">{"Đăng nhập lại"}</span>
                                             </div>
                                         </a>
                                     </div>
@@ -192,7 +192,7 @@ const Template = memo((props: TemplateProps) => {
                                     <a id="reset-login" href={url.loginRestartFlowUrl}>
                                         <div className="kc-login-tooltip">
                                             <i className={clsx(props.kcResetFlowIcon)}></i>
-                                            <span className="kc-tooltip-text">{msg("restartLoginTooltip")}</span>
+                                            <span className="kc-tooltip-text">{"Đăng nhập lại"}</span>
                                         </div>
                                     </a>
                                 </div>

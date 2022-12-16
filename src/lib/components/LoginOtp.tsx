@@ -63,7 +63,7 @@ const LoginOtp = memo((props: LoginOtpProps) => {
                     <div className={clsx(kcProps.kcFormGroupClass)}>
                         <div className={clsx(kcProps.kcLabelWrapperClass)}>
                             <label htmlFor="otp" className={clsx(kcProps.kcLabelClass)}>
-                                {msg("loginOtpOneTime")}
+                                {"Mã một lần"}
                             </label>
                         </div>
 
