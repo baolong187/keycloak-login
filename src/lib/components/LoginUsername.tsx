@@ -43,7 +43,7 @@ const LoginUsername = memo((props: LoginUsernameProps) => {
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
             displayInfo={social.displayInfo}
             displayWide={realm.password && social.providers !== undefined}
-            headerNode={msg("doLogIn")}
+            headerNode={"Đăng nhập"}
             formNode={
                 <div id="kc-form" className={clsx(realm.password && social.providers !== undefined && kcProps.kcContentWrapperClass)}>
                     <div
@@ -156,7 +156,7 @@ const LoginUsername = memo((props: LoginUsernameProps) => {
                         <span>
                             {msg("noAccount")}
                             <a tabIndex={6} href={url.registrationUrl}>
-                                {msg("doRegister")}
+                                {"Đăng ký"}
                             </a>
                         </span>
                     </div>

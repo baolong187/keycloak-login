@@ -23,14 +23,14 @@ const LoginVerifyEmail = memo((props: LoginVerifyEmailProps) => {
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
             displayMessage={false}
-            headerNode={msg("emailVerifyTitle")}
+            headerNode={"Email xác thực"}
             formNode={
                 <>
                     <p className="instruction">{msg("emailVerifyInstruction1", user?.email)}</p>
                     <p className="instruction">
                         {msg("emailVerifyInstruction2")}
                         <br />
-                        <a href={url.loginAction}>{msg("doClickHere")}</a>
+                        <a href={url.loginAction}>{"Ấn vào đây"}</a>
                         &nbsp;
                         {msg("emailVerifyInstruction3")}
                     </p>

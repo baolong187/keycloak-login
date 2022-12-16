@@ -23,7 +23,7 @@ const LoginUpdatePassword = memo((props: LoginUpdatePasswordProps) => {
     return (
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
-            headerNode={msg("updatePasswordTitle")}
+            headerNode={"Cập nhật mật khẩu"}
             formNode={
                 <form id="kc-passwd-update-form" className={clsx(kcProps.kcFormClass)} action={url.loginAction} method="post">
                     <input
@@ -102,7 +102,7 @@ const LoginUpdatePassword = memo((props: LoginUpdatePasswordProps) => {
                                         name="cancel-aia"
                                         value="true"
                                     >
-                                        {msg("doCancel")}
+                                        {"Hủy bỏ"}
                                     </button>
                                 </>
                             ) : (

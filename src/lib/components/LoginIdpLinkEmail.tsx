@@ -29,10 +29,10 @@ const LoginIdpLinkEmail = memo((props: LoginIdpLinkEmailProps) => {
                         {msg("emailLinkIdp1", idpAlias, brokerContext.username, realm.displayName)}
                     </p>
                     <p id="instruction2" className="instruction">
-                        {msg("emailLinkIdp2")} <a href={url.loginAction}>{msg("doClickHere")}</a> {msg("emailLinkIdp3")}
+                        {msg("emailLinkIdp2")} <a href={url.loginAction}>{"Ấn vào đây"}</a> {msg("emailLinkIdp3")}
                     </p>
                     <p id="instruction3" className="instruction">
-                        {msg("emailLinkIdp4")} <a href={url.loginAction}>{msg("doClickHere")}</a> {msg("emailLinkIdp5")}
+                        {msg("emailLinkIdp4")} <a href={url.loginAction}>{"Ấn vào đây"}</a> {msg("emailLinkIdp5")}
                     </p>
                 </>
             }

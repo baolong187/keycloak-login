@@ -26,7 +26,7 @@ const IdpReviewUserProfile = memo((props: IdpReviewUserProfileProps) => {
     return (
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
-            headerNode={msg("loginIdpReviewProfileTitle")}
+            headerNode={"Cập nhật thông tin tài khoản"}
             formNode={
                 <form id="kc-idp-review-profile-form" className={clsx(kcProps.kcFormClass)} action={url.loginAction} method="post">
                     <UserProfileFormFields kcContext={kcContext} onIsFormSubmittableValueChange={setIsFomSubmittable} i18n={i18n} {...kcProps} />

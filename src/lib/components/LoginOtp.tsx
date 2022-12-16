@@ -42,7 +42,7 @@ const LoginOtp = memo((props: LoginOtpProps) => {
     return (
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
-            headerNode={msg("doLogIn")}
+            headerNode={"Đăng nhập"}
             formNode={
                 <form id="kc-otp-login-form" className={clsx(kcProps.kcFormClass)} action={url.loginAction} method="post">
                     {otpLogin.userOtpCredentials.length > 1 && (

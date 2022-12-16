@@ -29,7 +29,7 @@ const LoginConfigTotp = memo((props: LoginConfigTotpProps) => {
     return (
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
-            headerNode={msg("loginTotpTitle")}
+            headerNode={"Thiết lập xác thực di động"}
             formNode={
                 <>
                     <ol id="kc-totp-settings">
@@ -172,7 +172,7 @@ const LoginConfigTotp = memo((props: LoginConfigTotpProps) => {
                                     name="cancel-aia"
                                     value="true"
                                 >
-                                    ${msg("doCancel")}
+                                    ${"Hủy bỏ"}
                                 </button>
                             </>
                         ) : (

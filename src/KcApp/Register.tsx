@@ -24,7 +24,7 @@ const Register = memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_Reg
         <Template
             {...{ kcContext, i18n, ...props }}
             doFetchDefaultThemeResources={true}
-            headerNode={msg("registerTitle")}
+            headerNode={"Đăng ký"}
             formNode={
                 <form id="kc-register-form" className={clsx(props.kcFormClass)} action={url.registrationAction} method="post">
                     <div className={clsx(props.kcFormGroupClass, messagesPerField.printIfExists("firstName", props.kcFormGroupErrorClass))}>

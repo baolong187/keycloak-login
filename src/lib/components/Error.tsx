@@ -23,7 +23,7 @@ const Error = memo((props: ErrorProps) => {
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
             displayMessage={false}
-            headerNode={msg("errorTitle")}
+            headerNode={"Đã có lỗi xảy ra..."}
             formNode={
                 <div id="kc-error-message">
                     <p className="instruction">{message.summary}</p>

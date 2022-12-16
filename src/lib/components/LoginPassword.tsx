@@ -37,7 +37,7 @@ const LoginPassword = memo((props: LoginPasswordProps) => {
     return (
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
-            headerNode={msg("doLogIn")}
+            headerNode={"Đăng nhập"}
             formNode={
                 <div id="kc-form">
                     <div id="kc-form-wrapper">
@@ -64,7 +64,7 @@ const LoginPassword = memo((props: LoginPasswordProps) => {
                                     {realm.resetPasswordAllowed && (
                                         <span>
                                             <a tabIndex={5} href={url.loginResetCredentialsUrl}>
-                                                {msg("doForgotPassword")}
+                                                {"Quên mật khẩu?"}
                                             </a>
                                         </span>
                                     )}

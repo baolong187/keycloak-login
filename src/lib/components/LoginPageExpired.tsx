@@ -29,12 +29,12 @@ const LoginPageExpired = memo((props: LoginPageExpired) => {
                     <p id="instruction1" className="instruction">
                         {msg("pageExpiredMsg1")}
                         <a id="loginRestartLink" href={url.loginRestartFlowUrl}>
-                            {msg("doClickHere")}
+                            {"Ấn vào đây"}
                         </a>{" "}
                         .<br />
                         {msg("pageExpiredMsg2")}{" "}
                         <a id="loginContinueLink" href={url.loginAction}>
-                            {msg("doClickHere")}
+                            {"Ấn vào đây"}
                         </a>{" "}
                         .
                     </p>

@@ -23,7 +23,7 @@ const LoginUpdateProfile = memo((props: LoginUpdateProfile) => {
     return (
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
-            headerNode={msg("loginProfileTitle")}
+            headerNode={"Cập nhật thông tin tài khoản"}
             formNode={
                 <form id="kc-update-profile-form" className={clsx(kcProps.kcFormClass)} action={url.loginAction} method="post">
                     {user.editUsernameAllowed && (
@@ -109,7 +109,7 @@ const LoginUpdateProfile = memo((props: LoginUpdateProfile) => {
                                         name="cancel-aia"
                                         value="true"
                                     >
-                                        {msg("doCancel")}
+                                        {"Hủy bỏ"}
                                     </button>
                                 </>
                             ) : (

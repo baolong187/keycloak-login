@@ -231,7 +231,7 @@ const Template = memo((props: TemplateProps) => {
                                     <div className={clsx(props.kcFormGroupClass)}>
                                         <input type="hidden" name="tryAnotherWay" value="on" />
                                         <a href="#" id="try-another-way" onClick={onTryAnotherWayClick}>
-                                            {msg("doTryAnotherWay")}
+                                            {"Thử cách khác"}
                                         </a>
                                     </div>
                                 </div>

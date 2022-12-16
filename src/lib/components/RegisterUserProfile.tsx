@@ -28,7 +28,7 @@ const RegisterUserProfile = memo((props: RegisterUserProfileProps) => {
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
             displayMessage={messagesPerField.exists("global")}
             displayRequiredFields={true}
-            headerNode={msg("registerTitle")}
+            headerNode={"Đăng ký"}
             formNode={
                 <form id="kc-register-form" className={clsx(kcProps.kcFormClass)} action={url.registrationAction} method="post">
                     <UserProfileFormFields kcContext={kcContext} onIsFormSubmittableValueChange={setIsFomSubmittable} i18n={i18n} {...kcProps} />
