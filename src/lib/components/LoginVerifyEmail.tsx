@@ -28,11 +28,11 @@ const LoginVerifyEmail = memo((props: LoginVerifyEmailProps) => {
                 <>
                     <p className="instruction">{msg("emailVerifyInstruction1", user?.email)}</p>
                     <p className="instruction">
-                        {msg("emailVerifyInstruction2")}
+                        {"Không nhận được mã xác minh trong email của bạn?"}
                         <br />
                         <a href={url.loginAction}>{"Ấn vào đây"}</a>
                         &nbsp;
-                        {msg("emailVerifyInstruction3")}
+                        {"gửi lại email."}
                     </p>
                 </>
             }

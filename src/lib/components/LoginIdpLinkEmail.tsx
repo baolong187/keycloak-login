@@ -29,10 +29,10 @@ const LoginIdpLinkEmail = memo((props: LoginIdpLinkEmailProps) => {
                         {msg("emailLinkIdp1", idpAlias, brokerContext.username, realm.displayName)}
                     </p>
                     <p id="instruction2" className="instruction">
-                        {msg("emailLinkIdp2")} <a href={url.loginAction}>{"Ấn vào đây"}</a> {msg("emailLinkIdp3")}
+                        {"Trong trường hợp không nhận được mã xác minh?"} <a href={url.loginAction}>{"Ấn vào đây"}</a> {"để gửi lại email."}
                     </p>
                     <p id="instruction3" className="instruction">
-                        {msg("emailLinkIdp4")} <a href={url.loginAction}>{"Ấn vào đây"}</a> {msg("emailLinkIdp5")}
+                        {"Nếu bạn đã xác minh tài khoản thành công trên trình duyệt khác"} <a href={url.loginAction}>{"Ấn vào đây"}</a> {"để tiếp tục."}
                     </p>
                 </>
             }

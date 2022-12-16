@@ -43,7 +43,7 @@ const RegisterUserProfile = memo((props: RegisterUserProfileProps) => {
                         <div id="kc-form-options" className={clsx(kcProps.kcFormOptionsClass)}>
                             <div className={clsx(kcProps.kcFormOptionsWrapperClass)}>
                                 <span>
-                                    <a href={url.loginUrl}>{msg("backToLogin")}</a>
+                                    <a href={url.loginUrl}>{"Quay lại trang đăng nhập"}</a>
                                 </span>
                             </div>
                         </div>

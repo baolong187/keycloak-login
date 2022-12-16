@@ -72,7 +72,7 @@ const LoginResetPassword = memo((props: LoginResetPasswordProps) => {
                     </div>
                 </form>
             }
-            infoNode={msg("emailInstruction")}
+            infoNode={"Nhập tên người dùng hoặc địa chỉ email của bạn và chúng tôi sẽ gửi cho bạn hướng dẫn về cách tạo mật khẩu mới."}
         />
     );
 });

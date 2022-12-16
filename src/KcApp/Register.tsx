@@ -144,7 +144,7 @@ const Register = memo(({ kcContext, i18n, ...props }: { kcContext: KcContext_Reg
                         <div id="kc-form-options" className={clsx(props.kcFormOptionsClass)}>
                             <div className={clsx(props.kcFormOptionsWrapperClass)}>
                                 <span>
-                                    <a href={url.loginUrl}>{msg("backToLogin")}</a>
+                                    <a href={url.loginUrl}>{"Quay lại trang đăng nhập"}</a>
                                 </span>
                             </div>
                         </div>
