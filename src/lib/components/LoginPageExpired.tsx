@@ -23,16 +23,16 @@ const LoginPageExpired = memo((props: LoginPageExpired) => {
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
             displayMessage={false}
-            headerNode={msg("pageExpiredTitle")}
+            headerNode={"Phiên đăng nhập đã hết hạn"}
             formNode={
                 <>
                     <p id="instruction1" className="instruction">
-                        {msg("pageExpiredMsg1")}
+                        {"Vui lòng đăng nhập lại"}
                         <a id="loginRestartLink" href={url.loginRestartFlowUrl}>
                             {"Ấn vào đây"}
                         </a>{" "}
                         .<br />
-                        {msg("pageExpiredMsg2")}{" "}
+                        {"Để tiếp tục truy cập"}{" "}
                         <a id="loginContinueLink" href={url.loginAction}>
                             {"Ấn vào đây"}
                         </a>{" "}

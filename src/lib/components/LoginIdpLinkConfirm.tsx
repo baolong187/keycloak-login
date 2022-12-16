@@ -23,7 +23,7 @@ const LoginIdpLinkConfirm = memo((props: LoginIdpLinkConfirmProps) => {
     return (
         <Template
             {...{ kcContext, i18n, doFetchDefaultThemeResources, ...kcProps }}
-            headerNode={msg("confirmLinkIdpTitle")}
+            headerNode={"Tài khoản đã tồn tại"}
             formNode={
                 <form id="kc-register-form" action={url.loginAction} method="post">
                     <div className={clsx(kcProps.kcFormGroupClass)}>
@@ -39,7 +39,7 @@ const LoginIdpLinkConfirm = memo((props: LoginIdpLinkConfirmProps) => {
                             id="updateProfile"
                             value="updateProfile"
                         >
-                            {msg("confirmLinkIdpReviewProfile")}
+                            {"Kiểm tra tài khoản"}
                         </button>
                         <button
                             type="submit"

@@ -151,7 +151,7 @@ const Template = memo((props: TemplateProps) => {
                                 <div className={clsx(props.kcLabelWrapperClass, "subtitle")}>
                                     <span className="subtitle">
                                         <span className="required">*</span>
-                                        {msg("requiredFields")}
+                                        {"Trường bắt buộc"}
                                     </span>
                                 </div>
                                 <div className="col-md-10">
@@ -165,7 +165,7 @@ const Template = memo((props: TemplateProps) => {
                         <div className={clsx(props.kcContentWrapperClass)}>
                             <div className={clsx(props.kcLabelWrapperClass, "subtitle")}>
                                 <span className="subtitle">
-                                    <span className="required">*</span> {msg("requiredFields")}
+                                    <span className="required">*</span> {"Trường bắt buộc"}
                                 </span>
                             </div>
                             <div className="col-md-10">
