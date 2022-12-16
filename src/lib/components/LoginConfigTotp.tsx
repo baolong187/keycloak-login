@@ -156,7 +156,7 @@ const LoginConfigTotp = memo((props: LoginConfigTotpProps) => {
                             <>
                                 <input
                                     type="submit"
-                                    className={clsx(kcProps.kcButtonClass, kcProps.kcButtonPrimaryClass, kcProps.kcButtonLargeClass)}
+                                    className={`${clsx(kcProps.kcButtonClass, kcProps.kcButtonPrimaryClass, kcProps.kcButtonLargeClass)} kc-button`}
                                     id="saveTOTPBtn"
                                     value={"Gửi"}
                                 />
@@ -178,7 +178,7 @@ const LoginConfigTotp = memo((props: LoginConfigTotpProps) => {
                         ) : (
                             <input
                                 type="submit"
-                                className={clsx(kcProps.kcButtonClass, kcProps.kcButtonPrimaryClass, kcProps.kcButtonLargeClass)}
+                                className={`${clsx(kcProps.kcButtonClass, kcProps.kcButtonPrimaryClass, kcProps.kcButtonLargeClass)} kc-button`}
                                 id="saveTOTPBtn"
                                 value={"Gửi"}
                             />

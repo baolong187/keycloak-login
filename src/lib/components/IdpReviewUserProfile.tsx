@@ -37,12 +37,12 @@ const IdpReviewUserProfile = memo((props: IdpReviewUserProfileProps) => {
                         </div>
                         <div id="kc-form-buttons" className={clsx(kcProps.kcFormButtonsClass)}>
                             <input
-                                className={clsx(
+                                className={`${clsx(
                                     kcProps.kcButtonClass,
                                     kcProps.kcButtonPrimaryClass,
                                     kcProps.kcButtonBlockClass,
                                     kcProps.kcButtonLargeClass
-                                )}
+                                )} kc-button`}
                                 type="submit"
                                 value={"Gửi"}
                                 disabled={!isFomSubmittable}
