@@ -212,7 +212,7 @@ const Login = memo((props: LoginProps) => {
                                 <div className={`${clsx(kcProps.kcFormGroupClass)} ${[2].includes(activeStep) ? "kc-active" : "kc-hide"}`}>
                                     <div className="kc-container-back">
                                         <button type="button" className="kc-button-login-back" onClick={handleBack} />
-                                        <span> {inputUsername} {chooseEmail? `- ${chooseEmail}`: ""} </span>
+                                        <span> {username} </span>
                                     </div>
 
                                     <div className="kc-head-input">
